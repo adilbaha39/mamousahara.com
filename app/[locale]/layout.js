@@ -18,17 +18,22 @@ const inter = Inter({
   variable: '--font-inter',
   display: 'swap',
 })
+
 const playfair = Playfair_Display({
   subsets: ['latin'],
   weight: ['400', '500'],
   variable: '--font-playfair',
   display: 'swap',
 })
+
+// Fixed: adjustFontFallback: false prevents Vercel build crash on Noto_Sans_Arabic
 const notoArabic = Noto_Sans_Arabic({
   subsets: ['arabic'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-arabic',
   display: 'swap',
+  adjustFontFallback: false,
+  fallback: ['Tahoma', 'Arial', 'sans-serif'],
 })
 
 export function generateStaticParams() {
