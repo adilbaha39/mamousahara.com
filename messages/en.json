@@ -1,0 +1,362 @@
+{
+  "meta": {
+    "siteName": "Mamou Sahara",
+    "defaultTitle": "Car Rental Morocco – Errachidia, Merzouga & Delivery",
+    "defaultDescription": "Car rental in Morocco: Errachidia, Merzouga, Marrakech and nationwide. 4x4, SUV and premium vehicles. Delivery to all cities. Book via WhatsApp."
+  },
+  "nav": {
+    "home": "Home",
+    "vehicles": "Vehicles",
+    "merzouga": "Merzouga",
+    "marrakech": "Marrakech",
+    "casablanca": "Casablanca",
+    "agadir": "Agadir",
+    "fourByFour": "4x4",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "contact": "Contact",
+    "about": "About",
+    "conditions": "Terms",
+    "book": "Book",
+    "destinations": "Destinations"
+  },
+  "common": {
+    "bookWhatsApp": "Book on WhatsApp",
+    "seeVehicles": "See vehicles",
+    "perDay": "MAD / day",
+    "airportDelivery": "Airport delivery",
+    "deliveryNationwide": "Delivery nationwide",
+    "assistance247": "24/7 assistance",
+    "fastBooking": "Fast booking",
+    "insuranceIncluded": "Insurance included",
+    "basicCoverage": "Basic coverage",
+    "viaWhatsApp": "Via WhatsApp",
+    "alwaysAvailable": "Always available",
+    "errachidiaAirport": "Errachidia Airport",
+    "learnMore": "Learn more",
+    "backHome": "Back to home",
+    "language": "Language",
+    "noVehicles": "No vehicles available at the moment. Contact us on WhatsApp."
+  },
+  "home": {
+    "eyebrow": "Car rental in Morocco",
+    "title": "Car rental in Errachidia, Merzouga and all over Morocco",
+    "subtitle": "4x4, SUV and premium vehicles. Delivery at Errachidia airport and to every city in Morocco.",
+    "tag": "Explore Morocco with freedom",
+    "fleetEyebrow": "Our fleet",
+    "fleetTitle": "A car for every adventure",
+    "fleetText": "From economy cars to premium 4x4s, find the ideal vehicle for Errachidia, Merzouga and the desert.",
+    "seeAll": "See all vehicles",
+    "stepsEyebrow": "Simple & fast",
+    "stepsTitle": "Book in 3 simple steps",
+    "step1Title": "Choose your vehicle",
+    "step1Text": "Browse our fleet and select the vehicle that fits your trip.",
+    "step2Title": "Pick your dates",
+    "step2Text": "Tell us your pick-up and return dates.",
+    "step3Title": "Contact us",
+    "step3Text": "Finalize your booking on WhatsApp in a few minutes.",
+    "seoTitle": "Car rental in Morocco – Errachidia, Merzouga and nationwide delivery",
+    "seoP1": "Mamou Sahara offers car rental in Errachidia and Merzouga, with delivery to every city in Morocco (Marrakech, Casablanca, Agadir, Ouarzazate, Fez…). Whether you plan a stay in the Erg Chebbi dunes or a road trip across the country, our fleet covers all needs.",
+    "seoP2": "The road between Errachidia and Merzouga is fully paved. A standard car is enough to reach the village. A 4x4 or SUV is useful if you want to explore tracks around the dunes.",
+    "seoP3": "Flexible delivery: Errachidia airport, hotel, or any city in Morocco subject to availability. Easy booking via WhatsApp. 24/7 assistance."
+  },
+  "vehicles": {
+    "title": "Vehicles for every adventure",
+    "subtitle": "4x4, SUV, premium and city cars for Errachidia, Merzouga and the Moroccan desert.",
+    "eyebrow": "Our fleet",
+    "metaTitle": "Car rental fleet Morocco – Errachidia & Merzouga",
+    "metaDescription": "Our fleet: Mercedes, Ford Ranger Raptor, Toyota RAV4, Audi Q8, T-Roc, Clio. Rental in Errachidia, Merzouga and delivery nationwide. From 300 MAD/day.",
+    "chooseTitle": "Which car for Merzouga?",
+    "chooseText": "To reach Merzouga from Errachidia, a city car or SUV is enough. If you plan tracks around the Erg Chebbi dunes, choose a 4x4."
+  },
+  "vehicle": {
+    "eyebrow": "Premium 4x4",
+    "title": "Ford Ranger Raptor",
+    "subtitle": "Power and comfort to explore Merzouga and Sahara tracks. Rental from Errachidia.",
+    "features": "Features",
+    "feature1": "Automatic gearbox",
+    "feature2": "5 seats",
+    "feature3": "Diesel – 4x4",
+    "feature4": "Ideal for desert & tracks",
+    "feature5": "Air conditioning",
+    "bookThis": "Book this vehicle",
+    "metaTitle": "Ford Ranger Raptor rental Merzouga | Sahara 4x4",
+    "metaDescription": "Rent the Ford Ranger Raptor in Errachidia and Merzouga. Premium 4x4 ideal for the desert, tracks and Erg Chebbi. From 1,500 MAD/day."
+  },
+  "merzouga": {
+    "eyebrow": "Merzouga & Sahara",
+    "title": "Car rental in Merzouga",
+    "subtitle": "Explore the Erg Chebbi dunes with a reliable vehicle. 4x4 and SUV from Errachidia, delivery possible to Merzouga.",
+    "bookCta": "Book for Merzouga",
+    "whyTitle": "Why rent a car for Merzouga?",
+    "whyP1": "Merzouga is the gateway to the great Erg Chebbi dunes. Whether for a bivouac, excursion or road trip in the south-east, your own vehicle gives you total freedom.",
+    "whyP2": "From Errachidia, the road to Merzouga is paved (about 1h45–2h). An SUV or 4x4 is recommended if you want access to tracks around the dunes.",
+    "whyP3": "Mamou Sahara offers recent vehicles suited to the desert, with pick-up at Errachidia airport or delivery subject to availability.",
+    "recommendedTitle": "Recommended vehicles for Merzouga",
+    "howTitle": "How to book?",
+    "howText": "Tell us your dates, number of passengers and if you arrive at Errachidia airport. We confirm the vehicle and conditions on WhatsApp.",
+    "askCta": "Request a vehicle for Merzouga",
+    "metaTitle": "Car rental Merzouga | 4x4 & SUV desert",
+    "metaDescription": "Car rental in Merzouga and from Errachidia. 4x4 and SUV suited to Erg Chebbi dunes. Delivery available, fast WhatsApp booking."
+  },
+  "fourByFour": {
+    "eyebrow": "4x4 & Desert",
+    "title": "4x4 rental in Errachidia and Merzouga",
+    "subtitle": "Off-road vehicles ready for the Sahara. Tracks, dunes and south-east Morocco roads.",
+    "bookCta": "Book a 4x4",
+    "whenTitle": "When do you need a 4x4?",
+    "whenP1": "The main road between Errachidia and Merzouga is paved. A standard car is enough to reach the village. Once you leave the asphalt — tracks to bivouacs, dune edges — a 4x4 or high-clearance SUV is safer and more comfortable.",
+    "recommendedTitle": "Our recommended 4x4s and SUVs",
+    "pickupTitle": "Pick-up points",
+    "pickupText": "Errachidia airport, Errachidia city centre, or delivery to Merzouga / Erfoud subject to availability.",
+    "askCta": "Request a 4x4",
+    "metaTitle": "4x4 rental Merzouga & Errachidia | Sahara desert",
+    "metaDescription": "4x4 rental in Errachidia and Merzouga for the desert. Ford Ranger Raptor and off-road SUVs. Ideal for tracks, dunes and Sahara road trips."
+  },
+  "marrakech": {
+    "eyebrow": "Marrakech & Morocco",
+    "title": "Car rental in Marrakech",
+    "subtitle": "Vehicles delivered to Marrakech. 4x4, SUV and sedans for the desert, Atlas and Morocco road trips.",
+    "bookCta": "Book for Marrakech",
+    "introTitle": "Car rental with delivery in Marrakech",
+    "introP1": "Mamou Sahara offers car rental in Marrakech with delivery. Based in Errachidia, we serve Marrakech and all of Morocco.",
+    "introP2": "Ideal to connect Marrakech → Ouarzazate → Merzouga and the Erg Chebbi dunes.",
+    "whyTitle": "Why rent with Mamou Sahara for Marrakech?",
+    "routesTitle": "Popular routes from Marrakech",
+    "recommendedTitle": "Recommended vehicles",
+    "howTitle": "How to book a car for Marrakech?",
+    "howText": "Tell us your dates, pick-up location in Marrakech (Menara airport, hotel, riad…) and preferred vehicle type.",
+    "askCta": "Request a vehicle for Marrakech",
+    "metaTitle": "Car rental Marrakech | Delivery & 4x4",
+    "metaDescription": "Car rental in Marrakech with delivery. 4x4, SUV and premium vehicles from Errachidia. Ideal for desert, Atlas and Morocco road trips."
+  },
+  "casablanca": {
+    "eyebrow": "Casablanca & Morocco",
+    "title": "Car rental in Casablanca",
+    "subtitle": "Vehicles delivered to Casablanca. 4x4, SUV and sedans for trips across Morocco and to the desert.",
+    "bookCta": "Book for Casablanca",
+    "introTitle": "Car rental with delivery in Casablanca",
+    "introP1": "Mamou Sahara offers car rental in Casablanca with delivery. Based in Errachidia, we serve Casablanca and all of Morocco.",
+    "introP2": "Ideal to leave Casablanca for Marrakech, Merzouga and the Erg Chebbi dunes.",
+    "whyTitle": "Why rent with Mamou Sahara for Casablanca?",
+    "routesTitle": "Popular routes from Casablanca",
+    "recommendedTitle": "Recommended vehicles",
+    "howTitle": "How to book a car for Casablanca?",
+    "howText": "Tell us your dates, pick-up location in Casablanca (Mohammed V airport, hotel…) and preferred vehicle type.",
+    "askCta": "Request a vehicle for Casablanca",
+    "metaTitle": "Car rental Casablanca | Delivery & 4x4",
+    "metaDescription": "Car rental in Casablanca with delivery. 4x4, SUV and premium vehicles. Ideal for the desert, Merzouga and Morocco road trips."
+  },
+  "agadir": {
+    "eyebrow": "Agadir & South Morocco",
+    "title": "Car rental in Agadir",
+    "subtitle": "Vehicles delivered to Agadir. 4x4, SUV and sedans for the South, Atlas and desert.",
+    "bookCta": "Book for Agadir",
+    "introTitle": "Car rental with delivery in Agadir",
+    "introP1": "Mamou Sahara offers car rental in Agadir with delivery. Based in Errachidia, we serve Agadir and all of Morocco.",
+    "introP2": "Ideal to connect Agadir to Marrakech, Ouarzazate and Merzouga.",
+    "whyTitle": "Why rent with Mamou Sahara for Agadir?",
+    "routesTitle": "Popular routes from Agadir",
+    "recommendedTitle": "Recommended vehicles",
+    "howTitle": "How to book a car for Agadir?",
+    "howText": "Tell us your dates, pick-up location in Agadir (Al Massira airport, hotel…) and preferred vehicle type.",
+    "askCta": "Request a vehicle for Agadir",
+    "metaTitle": "Car rental Agadir | Delivery & 4x4",
+    "metaDescription": "Car rental in Agadir with delivery. 4x4, SUV and premium vehicles. Ideal for South Morocco, desert and Merzouga."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "A question?\nWe're here.",
+    "subtitle": "Fast reply on WhatsApp. Delivery at Errachidia airport and in the region.",
+    "coordsTitle": "Our details",
+    "phoneLabel": "Phone & WhatsApp",
+    "phoneNote": "Fast reply on WhatsApp",
+    "emailLabel": "Email",
+    "emailNote": "We reply within 24h",
+    "agencyLabel": "Our agency",
+    "agencyPlace": "Errachidia, Morocco",
+    "agencyNote": "Errachidia airport delivery",
+    "bookNow": "Book now",
+    "bookText": "Contact us on WhatsApp for a fast, personalised booking.",
+    "writeWa": "Write on WhatsApp",
+    "metaTitle": "Contact – Car rental Morocco & Errachidia airport",
+    "metaDescription": "Contact Mamou Sahara. Car rental Errachidia, Merzouga and delivery nationwide. WhatsApp, phone. Available 7 days a week."
+  },
+  "faq": {
+    "eyebrow": "Help",
+    "title": "Frequently asked questions",
+    "subtitle": "Everything you need to know to rent in Errachidia and Merzouga.",
+    "metaTitle": "FAQ – Car rental Errachidia & Merzouga",
+    "metaDescription": "FAQ on car rental in Errachidia and Merzouga: licence, deposit, airport, 4x4, desert, cancellation.",
+    "items": [
+      {
+        "q": "Can I pick up the car at Errachidia airport?",
+        "a": "Yes. We offer delivery and pick-up at Moulay Ali Cherif Airport in Errachidia. Give us your flight number so we can meet you."
+      },
+      {
+        "q": "Do I need a 4x4 to go to Merzouga?",
+        "a": "The Errachidia–Merzouga road is paved. A normal car is enough to reach the village. A 4x4 or SUV is recommended if you want tracks around the dunes or more comfort."
+      },
+      {
+        "q": "What is the minimum age to rent?",
+        "a": "21 years old, with a licence valid for at least 1 year. Some vehicles (premium or 4x4) may require 25 years."
+      },
+      {
+        "q": "Is a deposit required?",
+        "a": "Yes, a deposit is required depending on the vehicle type. It is returned after inspection on return."
+      },
+      {
+        "q": "How does booking work?",
+        "a": "Very simple: contact us on WhatsApp with your dates, preferred vehicle and pick-up location. We confirm availability and conditions quickly."
+      },
+      {
+        "q": "Do you offer vehicles for the desert?",
+        "a": "Yes. Our fleet includes 4x4s (including the Ford Ranger Raptor) and SUVs suited to south-east Morocco roads and tracks, ideal for Merzouga and surroundings."
+      },
+      {
+        "q": "Can I cancel my booking?",
+        "a": "Yes. Free cancellation up to 48h before pick-up. Contact us on WhatsApp for any change or cancellation."
+      },
+      {
+        "q": "Is insurance included?",
+        "a": "Basic insurance is generally included. Coverage details and extra options are confirmed before booking confirmation."
+      }
+    ]
+  },
+  "blog": {
+    "eyebrow": "Blog",
+    "title": "Tips & guides",
+    "subtitle": "Errachidia–Merzouga road, 4x4, airport and desert: practical articles to prepare your rental.",
+    "metaTitle": "Blog – Car rental tips Errachidia & Merzouga",
+    "metaDescription": "Practical guides: Errachidia–Merzouga road, do you need a 4x4, Errachidia airport, desert car rental. Mamou Sahara tips.",
+    "readMore": "Read article",
+    "posts": [
+      {
+        "slug": "errachidia-merzouga",
+        "title": "Errachidia → Merzouga: distance, duration and tips",
+        "excerpt": "Everything about the road between Errachidia and Merzouga: travel time, road condition, and which vehicle to choose.",
+        "date": "2026-10-20",
+        "body": [
+          "The Errachidia–Merzouga route is one of the most popular trips in south-east Morocco. It takes you from Errachidia airport or city to the Erg Chebbi dunes.",
+          "## Distance and duration",
+          "Expect about 140–150 km depending on the route, or roughly 1 h 45 to 2 h 15 in normal conditions. The road is fully paved and in good condition for most of the journey.",
+          "## Which vehicle to choose?",
+          "A city car, sedan or standard SUV is enough to reach Merzouga. A 4x4 is not required for this road, but becomes useful if you plan tracks around the dunes or access to certain desert camps.",
+          "## Practical tips",
+          "Leave early to avoid the heat, fill up in Errachidia, and keep water in the car. Mamou Sahara can arrange pick-up at Errachidia airport and delivery toward Merzouga if needed."
+        ]
+      },
+      {
+        "slug": "faut-il-4x4-merzouga",
+        "title": "Do you need a 4x4 to go to Merzouga?",
+        "excerpt": "Paved road or tracks? We explain when a standard car is enough and when a 4x4 becomes useful.",
+        "date": "2026-10-18",
+        "body": [
+          "Many travellers wonder whether they absolutely need a 4x4 to reach Merzouga. The answer is nuanced.",
+          "## To reach the village",
+          "The road from Errachidia to Merzouga is fully paved. A city car, sedan or standard SUV is enough to reach the village centre and hotels on the edge of the dunes.",
+          "## When a 4x4 becomes useful",
+          "A 4x4 (or high-clearance SUV) is recommended if you want to: reach certain camps on tracks; drive around the Erg Chebbi dunes off the main roads; gain comfort and safety on rough tracks.",
+          "## Our advice",
+          "For a simple village + hotel trip, a normal car is enough. To explore tracks and the desert, choose a 4x4 such as the Ford Ranger Raptor. Mamou Sahara will advise you based on your plan."
+        ]
+      },
+      {
+        "slug": "aeroport-errachidia",
+        "title": "Car rental Errachidia airport: practical guide",
+        "excerpt": "Pick up your vehicle at Moulay Ali Cherif Airport: process, tips and WhatsApp booking.",
+        "date": "2026-10-15",
+        "body": [
+          "Errachidia airport (Moulay Ali Cherif, code ERH) is the ideal entry point to reach Merzouga and south-east Morocco with a rental car.",
+          "## How does pick-up work?",
+          "Give us your flight number when booking. We meet you on arrival with the vehicle ready. Key handover is quick: vehicle check, contract signature, and you are on your way.",
+          "## Timing and organisation",
+          "We adapt to flights, including early morning or evening. Share your schedule on WhatsApp so everything is ready when you land.",
+          "## On to Merzouga",
+          "From the airport, allow about 2 hours to Merzouga. A standard car is enough for the paved road; a 4x4 is a plus for tracks around the dunes."
+        ]
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "More than a rental, an experience.",
+    "subtitle": "Mamou Sahara accompanies you in Errachidia, Merzouga and all over Morocco.",
+    "metaTitle": "About – Mamou Sahara Car rental Errachidia",
+    "metaDescription": "Mamou Sahara, car rental agency in Errachidia and Merzouga. Our story and commitment to your Sahara journeys.",
+    "body": [
+      "Mamou Sahara is a car rental agency based in Errachidia, in the heart of south-east Morocco. We serve Merzouga, the Erg Chebbi dunes, and deliver nationwide: Marrakech, Casablanca, Agadir, Ouarzazate and beyond.",
+      "## Our mission",
+      "To offer you a reliable vehicle, simple welcome and 24/7 assistance. Whether you come for the desert, a road trip or a business journey, we adapt the fleet and delivery to your plan.",
+      "## Why choose us?",
+      "Recent fleet (4x4, SUV, premium, city cars), fast booking via WhatsApp, pick-up at Errachidia airport, and delivery to every city in Morocco. We know Sahara roads and advise you on the right vehicle.",
+      "## Our commitment",
+      "Clear prices and terms, vehicles checked before each departure, and a team reachable at any time. Your trip starts when we hand over the keys."
+    ]
+  },
+  "conditions": {
+    "eyebrow": "Information",
+    "title": "Rental terms",
+    "subtitle": "Clear and simple terms for your rental in Errachidia, Merzouga and all over Morocco.",
+    "metaTitle": "Rental terms – Mamou Sahara Errachidia",
+    "metaDescription": "Car rental terms: age, licence, deposit, fuel, insurance and cancellation. Clear and simple.",
+    "body": [
+      "The terms below apply to every rental with Mamou Sahara. Exact details (deposit, options) are confirmed before booking on WhatsApp.",
+      "## Age and licence",
+      "Minimum age: 21, with a driving licence valid for at least 1 year. Some premium or 4x4 vehicles may require 25 years. An international permit may be requested depending on your country.",
+      "## Deposit",
+      "A deposit is required according to the vehicle type. It is held or charged at pick-up and returned after inspection on return, subject to damage or missing items.",
+      "## Insurance",
+      "Basic insurance is generally included. Excesses, extensions and extra options (fully comprehensive, additional driver) are confirmed before booking.",
+      "## Fuel and mileage",
+      "The vehicle is handed over with an agreed fuel level (often full / full). Included mileage and any extra fees are stated at booking.",
+      "## Cancellation and changes",
+      "Free cancellation up to 48 h before pick-up. After that, fees may apply. Date or vehicle changes are made via WhatsApp subject to availability.",
+      "## Pick-up and return",
+      "Possible locations: Errachidia airport, Errachidia city, Merzouga, or another city in Morocco (delivery). Vehicle condition is checked with you at departure and return."
+    ]
+  },
+  "footer": {
+    "brandText": "Car rental in Errachidia, Merzouga and all over Morocco. 4x4, SUV and premium vehicles. Delivery to every city.",
+    "zones": "Service areas",
+    "links": "Useful links",
+    "contact": "Contact",
+    "rights": "All rights reserved.",
+    "tagline": "Car rental Morocco · Errachidia · Merzouga · Nationwide delivery"
+  },
+  "fleet": {
+    "mercedes": {
+      "name": "Mercedes E-Class",
+      "badge": "Luxury"
+    },
+    "troc": {
+      "name": "Volkswagen T-Roc",
+      "badge": "SUV"
+    },
+    "clio": {
+      "name": "Renault Clio",
+      "badge": "Economy"
+    },
+    "raptor": {
+      "name": "Ford Ranger Raptor",
+      "badge": "4x4"
+    },
+    "rav4": {
+      "name": "Toyota RAV4",
+      "badge": "SUV"
+    },
+    "q8": {
+      "name": "Audi Q8",
+      "badge": "Luxury"
+    }
+  },
+  "wa": {
+    "default": "Hello, I would like to book a vehicle",
+    "merzouga": "Car rental Merzouga",
+    "marrakech": "Hello, I would like a car rental in Marrakech",
+    "casablanca": "Hello, I would like a car rental in Casablanca",
+    "agadir": "Hello, I would like a car rental in Agadir",
+    "fourByFour": "4x4 rental Merzouga",
+    "raptor": "Ford Ranger Raptor"
+  }
+}

@@ -1,6 +1,13 @@
-# Mamou Sahara – Next.js
+# Mamou Sahara – Next.js (i18n)
 
-Site de location de voitures à Errachidia et Merzouga.
+Location de voitures – Errachidia, Merzouga et tout le Maroc.
+
+## Langues
+
+- Français `/fr`
+- English `/en`
+- العربية `/ar` (RTL)
+- Español `/es`
 
 ## Installation
 
@@ -10,43 +17,59 @@ npm install
 npm run dev
 ```
 
-Ouvrir [http://localhost:3000](http://localhost:3000)
+Ouvrir http://localhost:3000 (redirige vers `/fr`)
 
-## Build production
+## Structure i18n
 
-```bash
-npm run build
-npm start
-```
-
-## Structure
-
-- `app/` – Pages (App Router)
-- `components/` – Header (burger mobile), Footer
-- `lib/constants.js` – WhatsApp, email, site URL (modifier ici seulement)
-- `public/images/` – Logo + heroes + véhicules
-- `public/robots.txt` + `sitemap.xml`
+- `app/[locale]/` – pages par langue
+- `messages/{fr,en,ar,es}.json` – traductions
+- `middleware.js` – détection / redirection locale
+- `lib/i18n.js` – helpers
+- `components/LanguageSwitcher.js` – sélecteur de langue
 
 ## Contact
 
 - WhatsApp : +212 6 19 21 32 38
 - Email : mamou-sahara@gmail.com
 
-## SEO & Performance
+## Admin dashboard (Supabase)
 
-- Titles, meta, canonical, Open Graph
-- Schema.org CarRental + FAQPage
-- Fonts display: swap
-- Images lazy-loaded
-- Mobile-first responsive + burger menu fonctionnel
-- CSS optimisé, reduced motion support
+### 1. Create a Supabase project
+https://supabase.com → New project
 
-## Images manquantes
+### 2. Run SQL schema
+SQL Editor → paste and run `supabase/schema.sql`
 
-Remplacez les fichiers temporaires dans `public/images/` par de vraies photos :
-- mercedes-classe-e.jpg
-- vw-t-roc.jpg
-- renault-clio.jpg
-- ford-ranger-raptor.jpg
-- toyota-rav4.jpg
-- audi-q8.jpg
+### 3. Create admin user
+Authentication → Users → Add user  
+- Email: `mamousahara.com@gmail.com`  
+- Password: set in the Supabase dashboard (do **not** put it in the code)
+
+### 4. Env vars
+Copy `.env.example` to `.env.local`:
+
+```bash
+cp .env.example .env.local
+```
+
+Fill:
+
+```
+NEXT_PUBLIC_SUPABASE_URL=https://xxxx.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...
+```
+
+### 5. Run
+
+```bash
+npm install
+npm run dev
+```
+
+Open: http://localhost:3000/admin/login
+
+### Routes
+- `/admin/login` – email login
+- `/admin` – manage cars (CRUD + photos)
+
+Cars are stored in the `cars` table and photos in the `cars` storage bucket.

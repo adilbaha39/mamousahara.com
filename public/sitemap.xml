@@ -1,16 +1,579 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://mamou-sahara.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://mamou-sahara.com/vehicules</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mamou-sahara.com/merzouga</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mamou-sahara.com/4x4</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mamou-sahara.com/faq</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mamou-sahara.com/blog</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://mamou-sahara.com/blog/errachidia-merzouga</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mamou-sahara.com/blog/faut-il-4x4-merzouga</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mamou-sahara.com/blog/aeroport-errachidia</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mamou-sahara.com/vehicule</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://mamou-sahara.com/apropos</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://mamou-sahara.com/contact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mamou-sahara.com/conditions</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://mamou-sahara.com/fr</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/en</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/ar</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/es</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/fr/vehicules</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/vehicules" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/vehicules" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/vehicules" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/vehicules" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/en/vehicules</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/vehicules" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/vehicules" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/vehicules" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/vehicules" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/ar/vehicules</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/vehicules" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/vehicules" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/vehicules" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/vehicules" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/es/vehicules</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/vehicules" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/vehicules" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/vehicules" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/vehicules" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/fr/merzouga</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/merzouga" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/merzouga" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/merzouga" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/merzouga" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/en/merzouga</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/merzouga" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/merzouga" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/merzouga" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/merzouga" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/ar/merzouga</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/merzouga" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/merzouga" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/merzouga" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/merzouga" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/es/merzouga</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/merzouga" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/merzouga" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/merzouga" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/merzouga" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/fr/marrakech</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/marrakech" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/marrakech" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/marrakech" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/marrakech" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/en/marrakech</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/marrakech" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/marrakech" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/marrakech" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/marrakech" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/ar/marrakech</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/marrakech" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/marrakech" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/marrakech" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/marrakech" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/es/marrakech</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/marrakech" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/marrakech" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/marrakech" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/marrakech" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/fr/casablanca</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/casablanca" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/casablanca" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/casablanca" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/casablanca" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/en/casablanca</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/casablanca" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/casablanca" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/casablanca" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/casablanca" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/ar/casablanca</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/casablanca" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/casablanca" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/casablanca" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/casablanca" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/es/casablanca</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/casablanca" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/casablanca" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/casablanca" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/casablanca" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/fr/agadir</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/agadir" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/agadir" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/agadir" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/agadir" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/en/agadir</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/agadir" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/agadir" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/agadir" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/agadir" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/ar/agadir</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/agadir" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/agadir" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/agadir" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/agadir" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/es/agadir</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/agadir" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/agadir" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/agadir" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/agadir" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/fr/4x4</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/4x4" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/4x4" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/4x4" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/4x4" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/en/4x4</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/4x4" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/4x4" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/4x4" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/4x4" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/ar/4x4</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/4x4" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/4x4" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/4x4" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/4x4" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/es/4x4</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/4x4" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/4x4" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/4x4" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/4x4" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/fr/faq</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/faq" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/faq" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/faq" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/faq" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/en/faq</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/faq" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/faq" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/faq" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/faq" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/ar/faq</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/faq" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/faq" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/faq" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/faq" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/es/faq</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/faq" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/faq" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/faq" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/faq" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/fr/blog</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/blog" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/blog" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/en/blog</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/blog" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/blog" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/ar/blog</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/blog" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/blog" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/es/blog</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/blog" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/blog" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/fr/blog/errachidia-merzouga</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/blog/errachidia-merzouga" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/blog/errachidia-merzouga" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/blog/errachidia-merzouga" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/blog/errachidia-merzouga" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/en/blog/errachidia-merzouga</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/blog/errachidia-merzouga" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/blog/errachidia-merzouga" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/blog/errachidia-merzouga" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/blog/errachidia-merzouga" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/ar/blog/errachidia-merzouga</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/blog/errachidia-merzouga" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/blog/errachidia-merzouga" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/blog/errachidia-merzouga" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/blog/errachidia-merzouga" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/es/blog/errachidia-merzouga</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/blog/errachidia-merzouga" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/blog/errachidia-merzouga" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/blog/errachidia-merzouga" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/blog/errachidia-merzouga" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/fr/blog/faut-il-4x4-merzouga</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/blog/faut-il-4x4-merzouga" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/blog/faut-il-4x4-merzouga" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/blog/faut-il-4x4-merzouga" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/blog/faut-il-4x4-merzouga" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/en/blog/faut-il-4x4-merzouga</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/blog/faut-il-4x4-merzouga" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/blog/faut-il-4x4-merzouga" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/blog/faut-il-4x4-merzouga" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/blog/faut-il-4x4-merzouga" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/ar/blog/faut-il-4x4-merzouga</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/blog/faut-il-4x4-merzouga" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/blog/faut-il-4x4-merzouga" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/blog/faut-il-4x4-merzouga" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/blog/faut-il-4x4-merzouga" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/es/blog/faut-il-4x4-merzouga</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/blog/faut-il-4x4-merzouga" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/blog/faut-il-4x4-merzouga" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/blog/faut-il-4x4-merzouga" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/blog/faut-il-4x4-merzouga" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/fr/blog/aeroport-errachidia</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/blog/aeroport-errachidia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/blog/aeroport-errachidia" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/blog/aeroport-errachidia" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/blog/aeroport-errachidia" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/en/blog/aeroport-errachidia</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/blog/aeroport-errachidia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/blog/aeroport-errachidia" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/blog/aeroport-errachidia" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/blog/aeroport-errachidia" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/ar/blog/aeroport-errachidia</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/blog/aeroport-errachidia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/blog/aeroport-errachidia" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/blog/aeroport-errachidia" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/blog/aeroport-errachidia" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/es/blog/aeroport-errachidia</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/blog/aeroport-errachidia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/blog/aeroport-errachidia" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/blog/aeroport-errachidia" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/blog/aeroport-errachidia" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/fr/vehicule</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/vehicule" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/vehicule" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/vehicule" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/vehicule" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/en/vehicule</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/vehicule" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/vehicule" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/vehicule" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/vehicule" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/ar/vehicule</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/vehicule" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/vehicule" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/vehicule" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/vehicule" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/es/vehicule</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/vehicule" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/vehicule" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/vehicule" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/vehicule" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/fr/apropos</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/apropos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/apropos" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/apropos" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/apropos" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/en/apropos</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/apropos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/apropos" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/apropos" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/apropos" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/ar/apropos</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/apropos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/apropos" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/apropos" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/apropos" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/es/apropos</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/apropos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/apropos" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/apropos" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/apropos" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/fr/contact</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/contact" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/en/contact</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/contact" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/ar/contact</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/contact" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/es/contact</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/contact" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/fr/conditions</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/conditions" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/conditions" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/conditions" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/conditions" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/en/conditions</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/conditions" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/conditions" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/conditions" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/conditions" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/ar/conditions</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/conditions" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/conditions" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/conditions" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/conditions" />
+  </url>
+  <url>
+    <loc>https://mamou-sahara.com/es/conditions</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mamou-sahara.com/fr/conditions" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mamou-sahara.com/en/conditions" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mamou-sahara.com/ar/conditions" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://mamou-sahara.com/es/conditions" />
+  </url>
 </urlset>

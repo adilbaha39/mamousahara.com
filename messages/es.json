@@ -1,0 +1,362 @@
+{
+  "meta": {
+    "siteName": "Mamou Sahara",
+    "defaultTitle": "Alquiler de coches Marruecos – Errachidia, Merzouga y entrega",
+    "defaultDescription": "Alquiler de coches en Marruecos: Errachidia, Merzouga, Marrakech y todo el país. 4x4, SUV y vehículos premium. Entrega en todas las ciudades. Reserva por WhatsApp."
+  },
+  "nav": {
+    "home": "Inicio",
+    "vehicles": "Vehículos",
+    "merzouga": "Merzouga",
+    "marrakech": "Marrakech",
+    "casablanca": "Casablanca",
+    "agadir": "Agadir",
+    "fourByFour": "4x4",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "about": "Nosotros",
+    "conditions": "Condiciones",
+    "book": "Reservar",
+    "destinations": "Destinos"
+  },
+  "common": {
+    "bookWhatsApp": "Reservar por WhatsApp",
+    "seeVehicles": "Ver vehículos",
+    "perDay": "DH / día",
+    "airportDelivery": "Entrega aeropuerto",
+    "deliveryNationwide": "Entrega en todo Marruecos",
+    "assistance247": "Asistencia 24/7",
+    "fastBooking": "Reserva rápida",
+    "insuranceIncluded": "Seguro incluido",
+    "basicCoverage": "Cobertura básica",
+    "viaWhatsApp": "Vía WhatsApp",
+    "alwaysAvailable": "Siempre disponibles",
+    "errachidiaAirport": "Aeropuerto Errachidia",
+    "learnMore": "Saber más",
+    "backHome": "Volver al inicio",
+    "language": "Idioma",
+    "noVehicles": "No hay vehículos disponibles por el momento. Contáctenos por WhatsApp."
+  },
+  "home": {
+    "eyebrow": "Alquiler de coches en Marruecos",
+    "title": "Alquiler de coches en Errachidia, Merzouga y todo Marruecos",
+    "subtitle": "4x4, SUV y vehículos premium. Entrega en el aeropuerto de Errachidia y en todas las ciudades de Marruecos.",
+    "tag": "Explora Marruecos con total libertad",
+    "fleetEyebrow": "Nuestra flota",
+    "fleetTitle": "Un coche para cada aventura",
+    "fleetText": "Del vehículo económico al 4x4 premium, encuentra el coche ideal para Errachidia, Merzouga y el desierto.",
+    "seeAll": "Ver todos los vehículos",
+    "stepsEyebrow": "Simple y rápido",
+    "stepsTitle": "Reserva en 3 pasos simples",
+    "step1Title": "Elige tu vehículo",
+    "step1Text": "Recorre nuestra flota y selecciona el vehículo adecuado a tu viaje.",
+    "step2Title": "Indica tus fechas",
+    "step2Text": "Precisa tus fechas de recogida y devolución.",
+    "step3Title": "Contáctanos",
+    "step3Text": "Finaliza tu reserva por WhatsApp en pocos minutos.",
+    "seoTitle": "Alquiler de coches en Marruecos – Errachidia, Merzouga y entrega nacional",
+    "seoP1": "Mamou Sahara ofrece alquiler de coches en Errachidia y Merzouga, con entrega en todas las ciudades de Marruecos (Marrakech, Casablanca, Agadir, Ouarzazate, Fez…). Ya sea una estancia en las dunas del Erg Chebbi o un road-trip por el país, nuestra flota cubre todas las necesidades.",
+    "seoP2": "La carretera entre Errachidia y Merzouga está totalmente asfaltada. Un coche normal basta para llegar al pueblo. Un 4x4 o SUV es útil si quieres explorar pistas alrededor de las dunas.",
+    "seoP3": "Entrega flexible: aeropuerto de Errachidia, hotel o cualquier ciudad de Marruecos según disponibilidad. Reserva fácil por WhatsApp. Asistencia 24/7."
+  },
+  "vehicles": {
+    "title": "Vehículos para cada aventura",
+    "subtitle": "4x4, SUV, premium y urbanos para Errachidia, Merzouga y el desierto marroquí.",
+    "eyebrow": "Nuestra flota",
+    "metaTitle": "Flota alquiler coches Marruecos – Errachidia y Merzouga",
+    "metaDescription": "Nuestra flota: Mercedes, Ford Ranger Raptor, Toyota RAV4, Audi Q8, T-Roc, Clio. Alquiler en Errachidia, Merzouga y entrega en todo Marruecos. Desde 300 DH/día.",
+    "chooseTitle": "¿Qué coche para Merzouga?",
+    "chooseText": "Para llegar a Merzouga desde Errachidia basta un coche urbano o SUV. Si planeas pistas alrededor de las dunas del Erg Chebbi, elige un 4x4."
+  },
+  "vehicle": {
+    "eyebrow": "4x4 Premium",
+    "title": "Ford Ranger Raptor",
+    "subtitle": "Potencia y confort para explorar Merzouga y las pistas del Sáhara. Alquiler desde Errachidia.",
+    "features": "Características",
+    "feature1": "Caja automática",
+    "feature2": "5 plazas",
+    "feature3": "Diésel – 4x4",
+    "feature4": "Ideal desierto y pistas",
+    "feature5": "Aire acondicionado",
+    "bookThis": "Reservar este vehículo",
+    "metaTitle": "Alquiler Ford Ranger Raptor Merzouga | 4x4 Sáhara",
+    "metaDescription": "Alquila el Ford Ranger Raptor en Errachidia y Merzouga. 4x4 premium ideal para el desierto, pistas y Erg Chebbi. Desde 1.500 DH/día."
+  },
+  "merzouga": {
+    "eyebrow": "Merzouga y Sáhara",
+    "title": "Alquiler de coches en Merzouga",
+    "subtitle": "Explora las dunas del Erg Chebbi con un vehículo fiable. 4x4 y SUV desde Errachidia, con entrega posible en Merzouga.",
+    "bookCta": "Reservar para Merzouga",
+    "whyTitle": "¿Por qué alquilar un coche para Merzouga?",
+    "whyP1": "Merzouga es la puerta de las grandes dunas del Erg Chebbi. Ya sea para un vivac, una excursión o un road-trip en el sureste, tu propio vehículo te da total libertad.",
+    "whyP2": "Desde Errachidia, la carretera hasta Merzouga está asfaltada (unas 1h45–2h). Se recomienda un SUV o 4x4 si quieres acceder a pistas alrededor de las dunas.",
+    "whyP3": "Mamou Sahara ofrece vehículos recientes adaptados al desierto, con recogida en el aeropuerto de Errachidia o entrega según disponibilidad.",
+    "recommendedTitle": "Vehículos recomendados para Merzouga",
+    "howTitle": "¿Cómo reservar?",
+    "howText": "Indícanos tus fechas, el número de pasajeros y si llegas al aeropuerto de Errachidia. Confirmamos el vehículo y las condiciones por WhatsApp.",
+    "askCta": "Pedir un vehículo para Merzouga",
+    "metaTitle": "Alquiler coches Merzouga | 4x4 y SUV desierto",
+    "metaDescription": "Alquiler de coches en Merzouga y desde Errachidia. 4x4 y SUV adaptados a las dunas del Erg Chebbi. Entrega posible, reserva rápida por WhatsApp."
+  },
+  "fourByFour": {
+    "eyebrow": "4x4 y Desierto",
+    "title": "Alquiler 4x4 en Errachidia y Merzouga",
+    "subtitle": "Vehículos todoterreno listos para el Sáhara. Pistas, dunas y carreteras del sureste marroquí.",
+    "bookCta": "Reservar un 4x4",
+    "whenTitle": "¿Cuándo hace falta un 4x4?",
+    "whenP1": "La carretera principal entre Errachidia y Merzouga está asfaltada. Un coche normal basta para llegar al pueblo. En cuanto dejas el asfalto — pistas a vivacs, bordes de dunas — un 4x4 o SUV de mayor altura es más seguro y cómodo.",
+    "recommendedTitle": "Nuestros 4x4 y SUV recomendados",
+    "pickupTitle": "Puntos de recogida",
+    "pickupText": "Aeropuerto de Errachidia, centro de Errachidia, o entrega hacia Merzouga / Erfoud según disponibilidad.",
+    "askCta": "Pedir un 4x4",
+    "metaTitle": "Alquiler 4x4 Merzouga y Errachidia | Desierto Sáhara",
+    "metaDescription": "Alquiler de 4x4 en Errachidia y Merzouga para el desierto. Ford Ranger Raptor y SUV todoterreno. Ideal pistas, dunas y road-trips Sáhara."
+  },
+  "marrakech": {
+    "eyebrow": "Marrakech y Marruecos",
+    "title": "Alquiler de coches en Marrakech",
+    "subtitle": "Vehículos entregados en Marrakech. 4x4, SUV y berlinas para el desierto, el Atlas y tus road-trips en Marruecos.",
+    "bookCta": "Reservar para Marrakech",
+    "introTitle": "Alquiler de coches con entrega en Marrakech",
+    "introP1": "Mamou Sahara ofrece alquiler de coches en Marrakech con entrega. Con base en Errachidia, servimos Marrakech y todo Marruecos.",
+    "introP2": "Ideal para unir Marrakech → Ouarzazate → Merzouga y las dunas del Erg Chebbi.",
+    "whyTitle": "¿Por qué alquilar con Mamou Sahara para Marrakech?",
+    "routesTitle": "Itinerarios populares desde Marrakech",
+    "recommendedTitle": "Vehículos recomendados",
+    "howTitle": "¿Cómo reservar un coche para Marrakech?",
+    "howText": "Indícanos tus fechas, el lugar de recogida en Marrakech (aeropuerto Menara, hotel, riad…) y el tipo de vehículo deseado.",
+    "askCta": "Pedir un vehículo para Marrakech",
+    "metaTitle": "Alquiler coches Marrakech | Entrega y 4x4",
+    "metaDescription": "Alquiler de coches en Marrakech con entrega. 4x4, SUV y vehículos premium desde Errachidia. Ideal desierto, Atlas y road-trips en Marruecos."
+  },
+  "casablanca": {
+    "eyebrow": "Casablanca y Marruecos",
+    "title": "Alquiler de coches en Casablanca",
+    "subtitle": "Vehículos entregados en Casablanca. 4x4, SUV y berlinas para tus trayectos por Marruecos y hacia el desierto.",
+    "bookCta": "Reservar para Casablanca",
+    "introTitle": "Alquiler de coches con entrega en Casablanca",
+    "introP1": "Mamou Sahara ofrece alquiler de coches en Casablanca con entrega. Con base en Errachidia, servimos Casablanca y todo Marruecos.",
+    "introP2": "Ideal para salir de Casablanca hacia Marrakech, Merzouga y las dunas del Erg Chebbi.",
+    "whyTitle": "¿Por qué alquilar con Mamou Sahara para Casablanca?",
+    "routesTitle": "Itinerarios populares desde Casablanca",
+    "recommendedTitle": "Vehículos recomendados",
+    "howTitle": "¿Cómo reservar un coche para Casablanca?",
+    "howText": "Indícanos tus fechas, el lugar de recogida en Casablanca (aeropuerto Mohammed V, hotel…) y el tipo de vehículo deseado.",
+    "askCta": "Pedir un vehículo para Casablanca",
+    "metaTitle": "Alquiler coches Casablanca | Entrega y 4x4",
+    "metaDescription": "Alquiler de coches en Casablanca con entrega. 4x4, SUV y vehículos premium. Ideal para el desierto, Merzouga y road-trips en Marruecos."
+  },
+  "agadir": {
+    "eyebrow": "Agadir y Sur de Marruecos",
+    "title": "Alquiler de coches en Agadir",
+    "subtitle": "Vehículos entregados en Agadir. 4x4, SUV y berlinas para el Sur, el Atlas y el desierto.",
+    "bookCta": "Reservar para Agadir",
+    "introTitle": "Alquiler de coches con entrega en Agadir",
+    "introP1": "Mamou Sahara ofrece alquiler de coches en Agadir con entrega. Con base en Errachidia, servimos Agadir y todo Marruecos.",
+    "introP2": "Ideal para unir Agadir con Marrakech, Ouarzazate y Merzouga.",
+    "whyTitle": "¿Por qué alquilar con Mamou Sahara para Agadir?",
+    "routesTitle": "Itinerarios populares desde Agadir",
+    "recommendedTitle": "Vehículos recomendados",
+    "howTitle": "¿Cómo reservar un coche para Agadir?",
+    "howText": "Indícanos tus fechas, el lugar de recogida en Agadir (aeropuerto Al Massira, hotel…) y el tipo de vehículo deseado.",
+    "askCta": "Pedir un vehículo para Agadir",
+    "metaTitle": "Alquiler coches Agadir | Entrega y 4x4",
+    "metaDescription": "Alquiler de coches en Agadir con entrega. 4x4, SUV y vehículos premium. Ideal Sur de Marruecos, desierto y Merzouga."
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "¿Una pregunta?\nEstamos aquí.",
+    "subtitle": "Respuesta rápida por WhatsApp. Entrega aeropuerto Errachidia y en la región.",
+    "coordsTitle": "Nuestros datos",
+    "phoneLabel": "Teléfono y WhatsApp",
+    "phoneNote": "Respuesta rápida por WhatsApp",
+    "emailLabel": "Email",
+    "emailNote": "Respondemos en 24h",
+    "agencyLabel": "Nuestra agencia",
+    "agencyPlace": "Errachidia, Marruecos",
+    "agencyNote": "Entrega aeropuerto Errachidia",
+    "bookNow": "Reserva ahora",
+    "bookText": "Contáctanos por WhatsApp para una reserva rápida y personalizada.",
+    "writeWa": "Escribir por WhatsApp",
+    "metaTitle": "Contacto – Alquiler coches Marruecos y aeropuerto Errachidia",
+    "metaDescription": "Contacta Mamou Sahara. Alquiler coches Errachidia, Merzouga y entrega en todo Marruecos. WhatsApp, teléfono. Disponible 7 días."
+  },
+  "faq": {
+    "eyebrow": "Ayuda",
+    "title": "Preguntas frecuentes",
+    "subtitle": "Todo lo que debes saber para alquilar en Errachidia y Merzouga.",
+    "metaTitle": "FAQ – Alquiler coches Errachidia y Merzouga",
+    "metaDescription": "Preguntas frecuentes sobre alquiler de coches en Errachidia y Merzouga: permiso, fianza, aeropuerto, 4x4, desierto, anulación.",
+    "items": [
+      {
+        "q": "¿Puedo recoger el coche en el aeropuerto de Errachidia?",
+        "a": "Sí. Ofrecemos entrega y recogida en el aeropuerto Moulay Ali Cherif de Errachidia. Indica tu número de vuelo para que podamos esperarte."
+      },
+      {
+        "q": "¿Hace falta un 4x4 para ir a Merzouga?",
+        "a": "La carretera Errachidia–Merzouga está asfaltada. Un coche normal basta para llegar al pueblo. Un 4x4 o SUV se recomienda si quieres pistas alrededor de las dunas o más confort."
+      },
+      {
+        "q": "¿Cuál es la edad mínima para alquilar?",
+        "a": "21 años cumplidos, con permiso válido desde al menos 1 año. Algunos vehículos (premium o 4x4) pueden exigir 25 años."
+      },
+      {
+        "q": "¿Es obligatoria la fianza?",
+        "a": "Sí, se pide una fianza según el tipo de vehículo. Se devuelve tras la inspección del vehículo a la devolución."
+      },
+      {
+        "q": "¿Cómo funciona la reserva?",
+        "a": "Muy simple: contáctanos por WhatsApp con tus fechas, el vehículo deseado y el lugar de recogida. Confirmamos disponibilidad y condiciones rápidamente."
+      },
+      {
+        "q": "¿Ofrecéis vehículos para el desierto?",
+        "a": "Sí. Nuestra flota incluye 4x4 (entre ellos el Ford Ranger Raptor) y SUV adaptados a las carreteras y pistas del sureste marroquí, ideales para Merzouga y alrededores."
+      },
+      {
+        "q": "¿Puedo anular mi reserva?",
+        "a": "Sí. Anulación gratuita hasta 48h antes de la recogida. Contáctanos por WhatsApp para cualquier modificación o anulación."
+      },
+      {
+        "q": "¿El seguro está incluido?",
+        "a": "Un seguro básico suele estar incluido. Los detalles de cobertura y opciones complementarias se precisan antes de confirmar la reserva."
+      }
+    ]
+  },
+  "blog": {
+    "eyebrow": "Blog",
+    "title": "Consejos y guías",
+    "subtitle": "Carretera Errachidia–Merzouga, 4x4, aeropuerto y desierto: artículos prácticos para preparar tu alquiler.",
+    "metaTitle": "Blog – Consejos alquiler coches Errachidia y Merzouga",
+    "metaDescription": "Guías prácticas: carretera Errachidia–Merzouga, ¿hace falta un 4x4?, aeropuerto Errachidia, alquiler desierto. Consejos Mamou Sahara.",
+    "readMore": "Leer artículo",
+    "posts": [
+      {
+        "slug": "errachidia-merzouga",
+        "title": "Errachidia → Merzouga: distancia, duración y consejos",
+        "excerpt": "Todo sobre la carretera entre Errachidia y Merzouga: tiempo de viaje, estado de la vía y qué vehículo elegir.",
+        "date": "2026-10-20",
+        "body": [
+          "La ruta Errachidia – Merzouga es uno de los trayectos más demandados del sureste marroquí. Permite llegar a las dunas del Erg Chebbi desde el aeropuerto o la ciudad de Errachidia.",
+          "## Distancia y duración",
+          "Unos 140 a 150 km según el itinerario, es decir 1 h 45 a 2 h 15 en condiciones normales. La carretera está totalmente asfaltada y en buen estado en la mayor parte del recorrido.",
+          "## ¿Qué vehículo elegir?",
+          "Un coche urbano, una berlina o un SUV estándar bastan para llegar a Merzouga. Un 4x4 no es obligatorio en esta carretera, pero resulta útil si planeas pistas alrededor de las dunas o el acceso a ciertos campamentos.",
+          "## Consejos prácticos",
+          "Sal temprano para evitar el calor, llena el depósito en Errachidia y lleva agua en el vehículo. Mamou Sahara puede organizar la recogida en el aeropuerto de Errachidia y la entrega hacia Merzouga."
+        ]
+      },
+      {
+        "slug": "faut-il-4x4-merzouga",
+        "title": "¿Hace falta un 4x4 para ir a Merzouga?",
+        "excerpt": "¿Carretera asfaltada o pistas? Te explicamos cuándo basta un coche normal y cuándo un 4x4 es útil.",
+        "date": "2026-10-18",
+        "body": [
+          "Muchos viajeros se preguntan si hace falta absolutamente un 4x4 para llegar a Merzouga. La respuesta es matizada.",
+          "## Para llegar al pueblo",
+          "La carretera desde Errachidia hasta Merzouga está totalmente asfaltada. Un coche urbano, una berlina o un SUV estándar bastan para llegar al centro del pueblo y a los hoteles junto a las dunas.",
+          "## Cuándo el 4x4 resulta útil",
+          "Un 4x4 (o un SUV de mayor altura) se recomienda si quieres: acceder a ciertos campamentos por pista; circular alrededor de las dunas del Erg Chebbi fuera de los ejes principales; ganar confort y seguridad en pistas degradadas.",
+          "## Nuestro consejo",
+          "Para un viaje simple pueblo + hotel, basta un coche normal. Para explorar pistas y desierto, elige un 4x4 como el Ford Ranger Raptor. Mamou Sahara te aconseja según tu programa."
+        ]
+      },
+      {
+        "slug": "aeroport-errachidia",
+        "title": "Alquiler coche aeropuerto Errachidia: guía práctica",
+        "excerpt": "Recoger tu vehículo en el aeropuerto Moulay Ali Cherif: proceso, consejos y reserva por WhatsApp.",
+        "date": "2026-10-15",
+        "body": [
+          "El aeropuerto de Errachidia (Moulay Ali Cherif, código ERH) es el punto de entrada ideal para llegar a Merzouga y el sureste marroquí con un coche de alquiler.",
+          "## ¿Cómo es la recogida?",
+          "Indica tu número de vuelo al reservar. Te esperamos a la llegada con el vehículo preparado. La entrega de llaves es rápida: control del vehículo, firma del contrato y sales.",
+          "## Horarios y organización",
+          "Nos adaptamos a los vuelos, incluso temprano por la mañana o por la noche. Precisa tus horarios por WhatsApp para que todo esté listo al aterrizar.",
+          "## Hacia Merzouga después",
+          "Desde el aeropuerto, cuenta unas 2 horas hasta Merzouga. Un coche normal basta para la carretera asfaltada; un 4x4 es un plus para las pistas alrededor de las dunas."
+        ]
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "Nosotros",
+    "title": "Más que un alquiler, una experiencia.",
+    "subtitle": "Mamou Sahara te acompaña en Errachidia, Merzouga y todo Marruecos.",
+    "metaTitle": "Nosotros – Mamou Sahara Alquiler coches Errachidia",
+    "metaDescription": "Mamou Sahara, agencia de alquiler de coches en Errachidia y Merzouga. Nuestra historia y compromiso con tus viajes al Sáhara.",
+    "body": [
+      "Mamou Sahara es una agencia de alquiler de coches con base en Errachidia, en el corazón del sureste marroquí. Servimos Merzouga, las dunas del Erg Chebbi, y entregamos en todo Marruecos: Marrakech, Casablanca, Agadir, Ouarzazate y más.",
+      "## Nuestra misión",
+      "Ofrecerte un vehículo fiable, una acogida sencilla y asistencia 24/7. Ya vengas por el desierto, un road-trip o un viaje de negocios, adaptamos la flota y la entrega a tu programa.",
+      "## ¿Por qué elegirnos?",
+      "Flota reciente (4x4, SUV, premium, urbanos), reserva rápida por WhatsApp, recogida en el aeropuerto de Errachidia y entrega en todas las ciudades de Marruecos. Conocemos las carreteras del Sáhara y te aconsejamos el vehículo adecuado.",
+      "## Nuestro compromiso",
+      "Transparencia en tarifas y condiciones, vehículos revisados antes de cada salida, y un equipo localizable en todo momento. Tu viaje empieza al entregar las llaves."
+    ]
+  },
+  "conditions": {
+    "eyebrow": "Información",
+    "title": "Condiciones de alquiler",
+    "subtitle": "Transparentes y simples para tu alquiler en Errachidia, Merzouga y todo Marruecos.",
+    "metaTitle": "Condiciones de alquiler – Mamou Sahara Errachidia",
+    "metaDescription": "Condiciones de alquiler de coches: edad, permiso, fianza, combustible, seguro y anulación. Transparentes y simples.",
+    "body": [
+      "Las condiciones siguientes se aplican a todo alquiler con Mamou Sahara. Los detalles exactos (fianza, opciones) se confirman antes de la reserva por WhatsApp.",
+      "## Edad y permiso",
+      "Edad mínima: 21 años cumplidos, con permiso de conducir válido desde al menos 1 año. Algunos vehículos premium o 4x4 pueden exigir 25 años. Puede pedirse un permiso internacional según tu país.",
+      "## Fianza",
+      "Se pide una fianza según el tipo de vehículo. Se bloquea o cobra a la salida y se devuelve tras la inspección del vehículo a la devolución, salvo daños o faltantes.",
+      "## Seguro",
+      "Un seguro básico suele estar incluido. Franquicias, extensiones y opciones (a todo riesgo, conductor adicional) se precisan antes de confirmar.",
+      "## Combustible y kilometraje",
+      "El vehículo se entrega con un nivel de combustible acordado (a menudo lleno / lleno). El kilometraje incluido y posibles extras se indican al reservar.",
+      "## Anulación y cambios",
+      "Anulación gratuita hasta 48 h antes de la recogida. Después pueden aplicarse gastos. Cualquier cambio de fechas o vehículo se hace por WhatsApp según disponibilidad.",
+      "## Recogida y devolución",
+      "Lugares posibles: aeropuerto de Errachidia, ciudad de Errachidia, Merzouga u otra ciudad de Marruecos (entrega). El estado del vehículo se controla contigo a la salida y a la vuelta."
+    ]
+  },
+  "footer": {
+    "brandText": "Alquiler de coches en Errachidia, Merzouga y todo Marruecos. 4x4, SUV y vehículos premium. Entrega en todas las ciudades.",
+    "zones": "Zonas servidas",
+    "links": "Enlaces útiles",
+    "contact": "Contacto",
+    "rights": "Todos los derechos reservados.",
+    "tagline": "Alquiler coches Marruecos · Errachidia · Merzouga · Entrega nacional"
+  },
+  "fleet": {
+    "mercedes": {
+      "name": "Mercedes Clase E",
+      "badge": "Lujo"
+    },
+    "troc": {
+      "name": "Volkswagen T-Roc",
+      "badge": "SUV"
+    },
+    "clio": {
+      "name": "Renault Clio",
+      "badge": "Económico"
+    },
+    "raptor": {
+      "name": "Ford Ranger Raptor",
+      "badge": "4x4"
+    },
+    "rav4": {
+      "name": "Toyota RAV4",
+      "badge": "SUV"
+    },
+    "q8": {
+      "name": "Audi Q8",
+      "badge": "Lujo"
+    }
+  },
+  "wa": {
+    "default": "Hola, deseo reservar un vehículo",
+    "merzouga": "Alquiler coche Merzouga",
+    "marrakech": "Hola, deseo alquilar un coche en Marrakech",
+    "casablanca": "Hola, deseo alquilar un coche en Casablanca",
+    "agadir": "Hola, deseo alquilar un coche en Agadir",
+    "fourByFour": "Alquiler 4x4 Merzouga",
+    "raptor": "Ford Ranger Raptor"
+  }
+}
