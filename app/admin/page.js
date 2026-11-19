@@ -143,22 +143,43 @@ export default function AdminDashboardPage() {
   useEffect(() => {
     if (!isSupabaseConfigured) {
       setSessionReady(true)
-      setLoadError('Supabase non configuré. Créez .env.local avec NEXT_PUBLIC_SUPABASE_URL et NEXT_PUBLIC_SUPABASE_ANON_KEY')
+      setLoadError('Supabase non configuré. Créez .env.local avec NEXT_PUBLIC_SUPABASE_URL et NEXT_PUBLIC_SUPABASE_ANON_KEY puis redémarrez.')
       return
     }
     const supabase = getSupabase()
-    supabase.auth.getSession().then(({ data }) => {
+
+    let cancelled = false
+
+    async function check() {
+      const { data } = await supabase.auth.getSession()
+      if (cancelled) return
       if (!data.session) {
-        router.replace('/admin/login')
+        // small delay to avoid race with login redirect
+        setTimeout(() => {
+          if (!cancelled) router.replace('/admin/login')
+        }, 200)
         return
       }
       setSessionReady(true)
       loadCars()
+    }
+
+    check()
+
+    const { data: sub } = supabase.auth.onAuthStateChange((event, session) => {
+      if (cancelled) return
+      if (event === 'SIGNED_OUT' || !session) {
+        router.replace('/admin/login')
+      } else if (event === 'SIGNED_IN' && session) {
+        setSessionReady(true)
+        loadCars()
+      }
     })
-    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (!session) router.replace('/admin/login')
-    })
-    return () => sub?.subscription?.unsubscribe()
+
+    return () => {
+      cancelled = true
+      sub?.subscription?.unsubscribe()
+    }
   }, [router, loadCars])
 
   const filtered = useMemo(() => {

@@ -1,8 +1,8 @@
 {
   "meta": {
     "siteName": "Mamou Sahara",
-    "defaultTitle": "Location voiture Maroc – Errachidia, Merzouga & livraison",
-    "defaultDescription": "Location de voiture au Maroc : Errachidia, Merzouga, Marrakech et tout le pays. 4x4, SUV et véhicules premium. Livraison dans toutes les villes. Réservation WhatsApp."
+    "defaultTitle": "Location de voiture au Maroc – Errachidia, Merzouga & livraison nationale",
+    "defaultDescription": "Louez une voiture à Errachidia, Merzouga ou partout au Maroc. Flotte 4x4, SUV et véhicules premium. Livraison à l'aéroport et dans toutes les villes. Réservation simple par WhatsApp."
   },
   "nav": {
     "home": "Accueil",
@@ -39,35 +39,35 @@
     "noVehicles": "Aucune voiture disponible pour le moment. Contactez-nous sur WhatsApp."
   },
   "home": {
-    "eyebrow": "Location de voitures au Maroc",
-    "title": "Location de voitures à Errachidia, Merzouga et partout au Maroc",
-    "subtitle": "4x4, SUV et véhicules premium. Livraison aéroport Errachidia et dans toutes les villes du Maroc.",
-    "tag": "Explorez le Maroc en toute liberté",
+    "eyebrow": "Location de voitures · Maroc",
+    "title": "Votre voiture à Errachidia, Merzouga et dans tout le Maroc",
+    "subtitle": "Véhicules fiables, livraison à l'aéroport d'Errachidia et dans toutes les villes. Réservez en quelques minutes sur WhatsApp.",
+    "tag": "Liberté totale pour explorer le Sahara",
     "fleetEyebrow": "Notre flotte",
-    "fleetTitle": "Une voiture pour chaque aventure",
-    "fleetText": "Du véhicule économique au 4x4 premium, trouvez la voiture idéale pour Errachidia, Merzouga et le désert.",
+    "fleetTitle": "Choisissez le véhicule idéal pour votre voyage",
+    "fleetText": "De la citadine économique au 4x4 robuste, trouvez la voiture adaptée à Errachidia, aux dunes de Merzouga ou à un road-trip à travers le Maroc.",
     "seeAll": "Voir tous les véhicules",
     "stepsEyebrow": "Simple & rapide",
-    "stepsTitle": "Réservez en 3 étapes simples",
+    "stepsTitle": "Réservez facilement en 3 étapes",
     "step1Title": "Choisissez votre véhicule",
-    "step1Text": "Parcourez notre flotte et sélectionnez le véhicule adapté à votre trajet.",
+    "step1Text": "Parcourez notre flotte et choisissez le véhicule qui correspond à votre itinéraire.",
     "step2Title": "Indiquez vos dates",
-    "step2Text": "Précisez vos dates de prise en charge et de retour.",
+    "step2Text": "Indiquez vos dates et le lieu de prise en charge (aéroport, ville ou hôtel).",
     "step3Title": "Contactez-nous",
-    "step3Text": "Finalisez votre réservation via WhatsApp en quelques minutes.",
+    "step3Text": "Confirmez sur WhatsApp. Nous vous répondons rapidement et préparons votre véhicule.",
     "seoTitle": "Location de voiture au Maroc – Errachidia, Merzouga et livraison nationale",
     "seoP1": "Mamou Sahara propose la location de voitures à Errachidia et Merzouga, avec livraison dans toutes les villes du Maroc (Marrakech, Casablanca, Agadir, Ouarzazate, Fès…). Que vous planifiez un séjour dans les dunes de l'Erg Chebbi ou un road-trip à travers le pays, notre flotte couvre tous les besoins.",
     "seoP2": "La route entre Errachidia et Merzouga est entièrement goudronnée. Une voiture classique suffit pour rejoindre le village. Un 4x4 ou un SUV devient intéressant si vous souhaitez explorer les pistes autour des dunes.",
     "seoP3": "Livraison flexible : aéroport Errachidia, hôtel, ou n'importe quelle ville du Maroc selon disponibilité. Réservation simple via WhatsApp. Assistance 24/7."
   },
   "vehicles": {
-    "title": "Des véhicules pour chaque aventure",
-    "subtitle": "4x4, SUV, premium et citadines pour Errachidia, Merzouga et le désert marocain.",
+    "title": "Notre flotte : des véhicules pour chaque voyage",
+    "subtitle": "Citadines, SUV et 4x4 prêts pour Errachidia, Merzouga et le désert. Tous nos véhicules sont entretenus et assurés.",
     "eyebrow": "Notre flotte",
     "metaTitle": "Flotte location voiture Maroc – Errachidia & Merzouga",
     "metaDescription": "Notre flotte : Mercedes, Ford Ranger Raptor, Toyota RAV4, Audi Q8, T-Roc, Clio. Location Errachidia, Merzouga et livraison dans tout le Maroc. Dès 300 DH/jour.",
     "chooseTitle": "Quelle voiture choisir pour Merzouga ?",
-    "chooseText": "Pour rejoindre Merzouga depuis Errachidia, une citadine ou un SUV suffit. Si vous prévoyez des pistes autour des dunes de l'Erg Chebbi, optez pour un 4x4."
+    "chooseText": "La route Errachidia–Merzouga est goudronnée : une citadine ou un SUV suffit. Pour explorer les pistes autour des dunes de l'Erg Chebbi, privilégiez un 4x4."
   },
   "vehicle": {
     "eyebrow": "4x4 Premium",
@@ -86,11 +86,11 @@
   "merzouga": {
     "eyebrow": "Merzouga & Sahara",
     "title": "Location de voiture à Merzouga",
-    "subtitle": "Partez explorer les dunes de l'Erg Chebbi avec un véhicule fiable. 4x4 et SUV disponibles depuis Errachidia, avec livraison possible à Merzouga.",
+    "subtitle": "Explorez les dunes de l'Erg Chebbi en toute liberté. Véhicules disponibles depuis Errachidia, avec livraison possible à Merzouga.",
     "bookCta": "Réserver pour Merzouga",
     "whyTitle": "Pourquoi louer une voiture pour Merzouga ?",
-    "whyP1": "Merzouga est la porte d'entrée des grandes dunes de l'Erg Chebbi. Que vous veniez pour un bivouac, une excursion ou un road-trip dans le sud-est, disposer de votre propre véhicule vous donne une liberté totale.",
-    "whyP2": "Depuis Errachidia, la route jusqu'à Merzouga est goudronnée (environ 1h45–2h). Un SUV ou un 4x4 est recommandé si vous souhaitez accéder aux pistes autour des dunes.",
+    "whyP1": "Merzouga est la porte d'entrée des grandes dunes de l'Erg Chebbi. Avec votre propre véhicule, vous organisez votre journée librement : bivouac, excursion ou simple balade.",
+    "whyP2": "Depuis Errachidia, comptez environ 1h45 à 2h sur route goudronnée. Un 4x4 est recommandé uniquement si vous souhaitez accéder aux pistes autour des dunes.",
     "whyP3": "Mamou Sahara vous propose des véhicules récents, adaptés au désert, avec prise en charge à l'aéroport d'Errachidia ou livraison selon disponibilité.",
     "recommendedTitle": "Véhicules recommandés pour Merzouga",
     "howTitle": "Comment réserver ?",
@@ -177,7 +177,7 @@
     "agencyPlace": "Errachidia, Maroc",
     "agencyNote": "Livraison aéroport Errachidia",
     "bookNow": "Réservez maintenant",
-    "bookText": "Contactez-nous sur WhatsApp pour une réservation rapide et personnalisée.",
+    "bookText": "Écrivez-nous sur WhatsApp pour une réservation rapide et personnalisée. Nous répondons généralement en quelques minutes.",
     "writeWa": "Écrire sur WhatsApp",
     "metaTitle": "Contact – Location voiture Maroc & aéroport Errachidia",
     "metaDescription": "Contactez Mamou Sahara. Location voiture Errachidia, Merzouga et livraison dans tout le Maroc. WhatsApp, téléphone. Disponible 7j/7."
@@ -281,11 +281,11 @@
   "about": {
     "eyebrow": "À propos",
     "title": "Plus qu'une location, une expérience.",
-    "subtitle": "Mamou Sahara vous accompagne à Errachidia, Merzouga et dans tout le Maroc.",
+    "subtitle": "Mamou Sahara vous accompagne à Errachidia, Merzouga et dans tout le Maroc avec des véhicules fiables et un service simple.",
     "metaTitle": "À propos – Mamou Sahara Location voiture Errachidia",
     "metaDescription": "Mamou Sahara, agence de location de voitures à Errachidia et Merzouga. Notre histoire et notre engagement pour vos voyages au Sahara.",
     "body": [
-      "Mamou Sahara est une agence de location de voitures basée à Errachidia, au cœur du sud-est marocain. Nous servons Merzouga, les dunes de l'Erg Chebbi, et livrons dans tout le Maroc : Marrakech, Casablanca, Agadir, Ouarzazate et au-delà.",
+      "Mamou Sahara est une agence de location de voitures basée à Errachidia. Nous servons Merzouga, les dunes de l'Erg Chebbi, et livrons dans tout le Maroc : Marrakech, Casablanca, Agadir, Ouarzazate et au-delà.",
       "## Notre mission",
       "Vous offrir un véhicule fiable, un accueil simple et une assistance disponible 24/7. Que vous veniez pour le désert, un road-trip ou un trajet professionnel, nous adaptons la flotte et la livraison à votre programme.",
       "## Pourquoi nous choisir ?",
@@ -317,7 +317,7 @@
     ]
   },
   "footer": {
-    "brandText": "Location de voitures à Errachidia, Merzouga et dans tout le Maroc. 4x4, SUV et véhicules premium. Livraison dans toutes les villes.",
+    "brandText": "Location de voitures à Errachidia, Merzouga et dans tout le Maroc. Véhicules entretenus, livraison flexible et réservation simple.",
     "zones": "Zones desservies",
     "links": "Liens utiles",
     "contact": "Contact",

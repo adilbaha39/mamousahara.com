@@ -15,34 +15,51 @@ export default function AdminLoginPage() {
   useEffect(() => {
     if (!isSupabaseConfigured) {
       setChecking(false)
-      setError('Supabase non configuré. Ajoutez NEXT_PUBLIC_SUPABASE_URL et NEXT_PUBLIC_SUPABASE_ANON_KEY dans .env.local')
+      setError('Supabase non configuré. Vérifiez NEXT_PUBLIC_SUPABASE_URL et NEXT_PUBLIC_SUPABASE_ANON_KEY dans .env.local puis redémarrez le serveur.')
       return
     }
+
     const supabase = getSupabase()
     supabase.auth.getSession().then(({ data }) => {
-      if (data.session) router.replace('/admin')
-      else setChecking(false)
-    })
+      if (data.session) {
+        router.replace('/admin')
+      } else {
+        setChecking(false)
+      }
+    }).catch(() => setChecking(false))
   }, [router])
 
   async function onSubmit(e) {
     e.preventDefault()
     setError('')
     setLoading(true)
+
     try {
       const supabase = getSupabase()
-      const { error: err } = await supabase.auth.signInWithPassword({
+      const { data, error: err } = await supabase.auth.signInWithPassword({
         email: email.trim(),
         password,
       })
+
       if (err) {
-        setError(err.message === 'Invalid login credentials'
+        const msg = err.message === 'Invalid login credentials'
           ? 'Email ou mot de passe incorrect.'
-          : err.message)
+          : err.message
+        setError(msg)
         setLoading(false)
         return
       }
-      router.replace('/admin')
+
+      // Wait a moment for session to be fully stored, then redirect
+      if (data.session) {
+        setTimeout(() => {
+          router.replace('/admin')
+          router.refresh()
+        }, 300)
+      } else {
+        setError('Connexion réussie mais session non créée. Réessayez.')
+        setLoading(false)
+      }
     } catch (err) {
       setError(err.message || 'Erreur de connexion')
       setLoading(false)
@@ -67,7 +84,7 @@ export default function AdminLoginPage() {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="admin@example.com"
+          placeholder="mamousahara.com@gmail.com"
         />
         <label htmlFor="password">Mot de passe</label>
         <input

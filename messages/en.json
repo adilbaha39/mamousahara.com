@@ -1,8 +1,8 @@
 {
   "meta": {
     "siteName": "Mamou Sahara",
-    "defaultTitle": "Car Rental Morocco – Errachidia, Merzouga & Delivery",
-    "defaultDescription": "Car rental in Morocco: Errachidia, Merzouga, Marrakech and nationwide. 4x4, SUV and premium vehicles. Delivery to all cities. Book via WhatsApp."
+    "defaultTitle": "Car Rental Morocco – Errachidia, Merzouga & Nationwide Delivery",
+    "defaultDescription": "Rent a car in Errachidia, Merzouga or anywhere in Morocco. 4x4, SUV and premium vehicles. Airport and city delivery. Easy WhatsApp booking."
   },
   "nav": {
     "home": "Home",
@@ -40,12 +40,12 @@
   },
   "home": {
     "eyebrow": "Car rental in Morocco",
-    "title": "Car rental in Errachidia, Merzouga and all over Morocco",
-    "subtitle": "4x4, SUV and premium vehicles. Delivery at Errachidia airport and to every city in Morocco.",
+    "title": "Your car in Errachidia, Merzouga and all over Morocco",
+    "subtitle": "Reliable vehicles, delivery at Errachidia airport and in every city. Book in minutes via WhatsApp.",
     "tag": "Explore Morocco with freedom",
     "fleetEyebrow": "Our fleet",
-    "fleetTitle": "A car for every adventure",
-    "fleetText": "From economy cars to premium 4x4s, find the ideal vehicle for Errachidia, Merzouga and the desert.",
+    "fleetTitle": "Choose the right vehicle for your trip",
+    "fleetText": "From economical cars to robust 4x4s, find the ideal vehicle for Errachidia, the Merzouga dunes or a road trip across Morocco.",
     "seeAll": "See all vehicles",
     "stepsEyebrow": "Simple & fast",
     "stepsTitle": "Book in 3 simple steps",

@@ -1,4 +1,4 @@
-import { Inter, Playfair_Display, Noto_Sans_Arabic } from 'next/font/google'
+import { Inter, Playfair_Display } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -18,24 +18,12 @@ const inter = Inter({
   variable: '--font-inter',
   display: 'swap',
 })
-
 const playfair = Playfair_Display({
   subsets: ['latin'],
   weight: ['400', '500'],
   variable: '--font-playfair',
   display: 'swap',
 })
-
-// Fixed: adjustFontFallback: false prevents Vercel build crash on Noto_Sans_Arabic
-const notoArabic = Noto_Sans_Arabic({
-  subsets: ['arabic'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-arabic',
-  display: 'swap',
-  adjustFontFallback: false,
-  fallback: ['Tahoma', 'Arial', 'sans-serif'],
-})
-
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
 }
@@ -97,6 +85,10 @@ export default async function LocaleLayout({ children, params }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -111,7 +103,7 @@ export default async function LocaleLayout({ children, params }) {
         ))}
         <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/fr`} />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} ${notoArabic.variable}${locale === 'ar' ? ' font-ar' : ''}`}>
+      <body className={`${inter.variable} ${playfair.variable}${locale === 'ar' ? ' font-ar' : ''}`}>
         <Header locale={locale} dict={dict} />
         <main>{children}</main>
         <Footer locale={locale} dict={dict} />

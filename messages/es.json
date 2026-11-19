@@ -1,8 +1,8 @@
 {
   "meta": {
     "siteName": "Mamou Sahara",
-    "defaultTitle": "Alquiler de coches Marruecos – Errachidia, Merzouga y entrega",
-    "defaultDescription": "Alquiler de coches en Marruecos: Errachidia, Merzouga, Marrakech y todo el país. 4x4, SUV y vehículos premium. Entrega en todas las ciudades. Reserva por WhatsApp."
+    "defaultTitle": "Alquiler de coches en Marruecos – Errachidia, Merzouga y entrega nacional",
+    "defaultDescription": "Alquila un coche en Errachidia, Merzouga o en cualquier ciudad de Marruecos. 4x4, SUV y vehículos premium. Entrega en aeropuerto y ciudades. Reserva fácil por WhatsApp."
   },
   "nav": {
     "home": "Inicio",
@@ -40,8 +40,8 @@
   },
   "home": {
     "eyebrow": "Alquiler de coches en Marruecos",
-    "title": "Alquiler de coches en Errachidia, Merzouga y todo Marruecos",
-    "subtitle": "4x4, SUV y vehículos premium. Entrega en el aeropuerto de Errachidia y en todas las ciudades de Marruecos.",
+    "title": "Tu coche en Errachidia, Merzouga y en todo Marruecos",
+    "subtitle": "Vehículos fiables, entrega en el aeropuerto de Errachidia y en todas las ciudades. Reserva en minutos por WhatsApp.",
     "tag": "Explora Marruecos con total libertad",
     "fleetEyebrow": "Nuestra flota",
     "fleetTitle": "Un coche para cada aventura",
