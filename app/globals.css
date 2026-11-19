@@ -725,3 +725,36 @@ html[dir="rtl"] .hdr-r {
   margin-right: auto;
   flex-direction: row-reverse;
 }
+
+/* ===== Arabic Header Order (Mobile & Desktop) ===== */
+html[dir="rtl"] header .wrap {
+  flex-direction: row-reverse;
+}
+
+/* On mobile Arabic: burger left, then booking, then lang, logo right */
+@media (max-width: 900px) {
+  html[dir="rtl"] header .wrap {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  html[dir="rtl"] .logo {
+    order: 3;
+    margin-left: auto;
+  }
+  html[dir="rtl"] .hdr-r {
+    order: 1;
+    margin-right: 0;
+    margin-left: 0;
+    flex-direction: row;
+    gap: 8px;
+  }
+  html[dir="rtl"] .hdr-r .burger {
+    order: 1;
+  }
+  html[dir="rtl"] .hdr-r .btn-wa {
+    order: 2;
+  }
+  html[dir="rtl"] .hdr-r .hdr-lang {
+    order: 3;
+  }
+}

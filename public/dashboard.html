@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Manage Cars</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+:root{--navy:#0b1f4f;--blue:#1d5fd6;--ink:#0d1b3d;--muted:#5b6785;--line:#e6eaf3;--bg:#f3f6fc;--red:#e03131;--sb:216px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;display:flex}
+.sidebar{width:var(--sb);background:linear-gradient(180deg,#0b1f4f,#0a2a6b);color:#fff;position:sticky;top:0;height:100vh}
+.logo{height:100px;display:flex;align-items:center;justify-content:center}
+.nav{padding:0 14px;margin-top:20px}
+.nav a{display:flex;align-items:center;gap:14px;min-height:64px;padding:0 24px;color:#e8eefc;text-decoration:none;font-size:18px;border-radius:10px}
+.nav a.active{background:var(--blue)}
+.main{flex:1}
+.topbar{height:80px;background:#f7f9fe;border-bottom:2px solid #d4dbea;display:flex;align-items:center;justify-content:space-between;padding:0 28px}
+.content{padding:28px}
+.page-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:16px}
+.title-wrap h1{font-size:32px;color:var(--navy)}
+.btn-add{background:var(--navy);color:#fff;padding:16px 24px;border-radius:10px;font-size:18px;border:0;cursor:pointer}
+.card{background:#fff;border-radius:14px;border:1px solid var(--line);overflow:hidden}
+table{width:100%;border-collapse:collapse}
+thead th{background:var(--navy);color:#fff;padding:16px 8px}
+tbody td{padding:16px 8px;border-bottom:1px solid var(--line);text-align:center}
+td.name{text-align:start;font-weight:700}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center}
+.modal.open{display:flex}
+.box{background:#fff;padding:26px;border-radius:14px;width:100%;max-width:460px}
+.box input,.box select{width:100%;height:44px;margin:6px 0 12px;padding:0 12px;border:1.5px solid #dfe5f1;border-radius:8px}
+.btns{display:flex;gap:10px;justify-content:flex-end;margin-top:16px}
+.btns button{padding:12px 20px;border-radius:8px;border:0;cursor:pointer}
+.b-save{background:var(--navy);color:#fff}
+.b-cancel{background:#e8ecf3}
+html[lang=ar] body{font-family:"Noto Sans Arabic",sans-serif}
+</style>
+</head>
+<body>
+<aside class="sidebar">
+  <div class="logo"><b style="font-size:20px">MAMOU</b></div>
+  <nav class="nav">
+    <a href="#" class="active">Voitures</a>
+    <a href="#" id="logout">Déconnexion</a>
+  </nav>
+</aside>
+<div class="main">
+  <header class="topbar">
+    <div></div>
+    <button id="langBtn" style="padding:10px 16px;border-radius:10px;border:1.5px solid #dfe5f1;background:#fff">Français</button>
+  </header>
+  <div class="content">
+    <div class="page-head">
+      <div class="title-wrap">
+        <h1 id="title">Gestion des voitures</h1>
+        <p id="subtitle">Ajoutez, modifiez ou supprimez des voitures</p>
+      </div>
+      <button class="btn-add" id="addBtn">+ Ajouter une voiture</button>
+    </div>
+    <div class="card">
+      <div style="padding:16px">
+        <input id="q" type="search" placeholder="Rechercher..." style="width:100%;height:48px;padding:0 16px;border:1.5px solid #dfe5f1;border-radius:10px">
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Image</th><th>Nom</th><th>Année</th><th>Carburant</th><th>Places</th><th>Prix</th><th>Statut</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal">
+  <div class="box">
+    <h2 id="mTitle">Ajouter</h2>
+    <label>Nom</label><input id="fName">
+    <label>Année</label><input id="fYear" type="number" value="2024">
+    <label>Places</label><input id="fSeats" type="number" value="5">
+    <label>Carburant</label>
+    <select id="fFuel"><option>Essence</option><option>Diesel</option><option>Hybride</option></select>
+    <label>Prix</label><input id="fPrice" type="number" value="300">
+    <label>Statut</label>
+    <select id="fStatus"><option value="Available">Disponible</option><option value="Reserved">Réservée</option></select>
+    <div class="btns">
+      <button class="b-cancel" id="cancel">Annuler</button>
+      <button class="b-save" id="save">Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const SUPABASE_URL = 'https://silojlgiomgbsrpsdiug.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_6EEteo2WcQtnyDiNNY3iTQ_XRtYBt1r';
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+let cars = [], editId = null, lang = 'fr';
+
+const I18N = {
+  fr: { title: 'Gestion des voitures', subtitle: 'Ajoutez, modifiez ou supprimez des voitures', add: 'Ajouter une voiture', none: 'Aucune voiture' },
+  ar: { title: 'إدارة السيارات', subtitle: 'أضف أو عدّل أو احذف السيارات', add: 'إضافة سيارة', none: 'لا توجد سيارات' }
+};
+
+async function load() {
+  const { data, error } = await supabase.from('cars').select('*').order('created_at', { ascending: false });
+  if (error) { alert(error.message); return; }
+  cars = data || [];
+  render();
+}
+
+function render() {
+  const q = document.getElementById('q').value.toLowerCase();
+  const list = cars.filter(c => c.name.toLowerCase().includes(q));
+  const tbody = document.getElementById('rows');
+  tbody.innerHTML = list.length ? list.map(c => `
+    <tr>
+      <td>${c.image_url ? `<img src="${c.image_url}" style="width:100px;height:50px;object-fit:cover;border-radius:8px">` : '🚗'}</td>
+      <td class="name">${c.name}</td>
+      <td>${c.year}</td>
+      <td>${c.fuel}</td>
+      <td>${c.seats}</td>
+      <td>${c.price} DH</td>
+      <td>${c.status}</td>
+      <td>
+        <button onclick="edit(${c.id})" style="background:#1d5fd6;color:#fff;border:0;padding:8px 12px;border-radius:6px;margin:0 4px">✏️</button>
+        <button onclick="del(${c.id})" style="background:#e03131;color:#fff;border:0;padding:8px 12px;border-radius:6px">🗑️</button>
+      </td>
+    </tr>
+  `).join('') : `<tr><td colspan="8" style="padding:40px;color:#5b6785">${I18N[lang].none}</td></tr>`;
+}
+
+function edit(id) {
+  const c = cars.find(x => x.id === id);
+  editId = id;
+  document.getElementById('fName').value = c.name;
+  document.getElementById('fYear').value = c.year;
+  document.getElementById('fSeats').value = c.seats;
+  document.getElementById('fFuel').value = c.fuel;
+  document.getElementById('fPrice').value = c.price;
+  document.getElementById('fStatus').value = c.status;
+  document.getElementById('mTitle').textContent = 'Modifier';
+  document.getElementById('modal').classList.add('open');
+}
+
+async function del(id) {
+  if (!confirm('Supprimer ?')) return;
+  await supabase.from('cars').delete().eq('id', id);
+  load();
+}
+
+document.getElementById('addBtn').onclick = () => {
+  editId = null;
+  document.getElementById('fName').value = '';
+  document.getElementById('mTitle').textContent = 'Ajouter';
+  document.getElementById('modal').classList.add('open');
+};
+
+document.getElementById('cancel').onclick = () => document.getElementById('modal').classList.remove('open');
+
+document.getElementById('save').onclick = async () => {
+  const payload = {
+    name: document.getElementById('fName').value.trim(),
+    year: +document.getElementById('fYear').value,
+    seats: +document.getElementById('fSeats').value,
+    fuel: document.getElementById('fFuel').value,
+    price: +document.getElementById('fPrice').value,
+    status: document.getElementById('fStatus').value,
+  };
+  if (!payload.name) return;
+  if (editId) {
+    await supabase.from('cars').update(payload).eq('id', editId);
+  } else {
+    await supabase.from('cars').insert(payload);
+  }
+  document.getElementById('modal').classList.remove('open');
+  load();
+};
+
+document.getElementById('q').oninput = render;
+document.getElementById('logout').onclick = async (e) => {
+  e.preventDefault();
+  await supabase.auth.signOut();
+  location.href = '/admin/login';
+};
+
+document.getElementById('langBtn').onclick = () => {
+  lang = lang === 'fr' ? 'ar' : 'fr';
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.getElementById('title').textContent = I18N[lang].title;
+  document.getElementById('subtitle').textContent = I18N[lang].subtitle;
+  document.getElementById('addBtn').textContent = '+ ' + I18N[lang].add;
+  document.getElementById('langBtn').textContent = lang === 'fr' ? 'Français' : 'العربية';
+  render();
+};
+
+load();
+</script>
+</body>
+</html>
