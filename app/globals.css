@@ -51,8 +51,8 @@ svg use[href="#wa"],
 
 /* ====== HEADER ====== */
 header {
-  position: absolute; top: 0; left: 0; right: 0;
-  z-index: 50; padding: 16px 0;
+  position: sticky; top: 0; left: 0; right: 0; background: rgba(11, 31, 79, 0.95); backdrop-filter: blur(10px);
+  z-index: 100; padding: 16px 0;
 }
 header .wrap {
   display: flex; align-items: center; gap: 24px;
@@ -713,5 +713,15 @@ html[dir="rtl"] .hdr-r {
   flex-direction: row-reverse;
 }
 html[dir="rtl"] .lang-menu a {
+  flex-direction: row-reverse;
+}
+
+/* Force correct order in Arabic: logo right, actions left */
+html[dir="rtl"] header .wrap {
+  flex-direction: row-reverse;
+}
+html[dir="rtl"] .hdr-r {
+  margin-left: 0;
+  margin-right: auto;
   flex-direction: row-reverse;
 }

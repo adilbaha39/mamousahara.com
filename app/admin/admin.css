@@ -99,3 +99,18 @@ html[lang=ar] body{font-family:"Noto Sans Arabic","Inter",system-ui,sans-serif}
   .btn-add{width:100%}
   table{min-width:0}
 }
+
+/* Force clean mobile state */
+@media (max-width:1024px){
+  .sidebar{transform:translateX(-110%) !important}
+  [dir=rtl] .sidebar{transform:translateX(110%) !important}
+  .sidebar.open{transform:translateX(0) !important}
+  .scrim{pointer-events:none}
+  .scrim.show{pointer-events:auto}
+}
+
+/* Fix any unwanted image overlays */
+.card img, td.img img, .photo{
+  filter:none !important;
+  mix-blend-mode:normal !important;
+}
