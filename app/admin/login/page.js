@@ -22,7 +22,7 @@ export default function AdminLoginPage() {
     const supabase = getSupabase()
     supabase.auth.getSession().then(({ data }) => {
       if (data.session) {
-        router.replace('/admin')
+        window.location.replace('/dashboard.html')
       } else {
         setChecking(false)
       }
@@ -53,8 +53,7 @@ export default function AdminLoginPage() {
       // Wait a moment for session to be fully stored, then redirect
       if (data.session) {
         setTimeout(() => {
-          router.replace('/admin')
-          router.refresh()
+          window.location.replace('/dashboard.html')
         }, 300)
       } else {
         setError('Connexion réussie mais session non créée. Réessayez.')

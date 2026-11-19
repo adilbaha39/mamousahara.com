@@ -17,5 +17,8 @@ const nextConfig = {
   staticPageGenerationTimeout: 120,
   compress: true,
   poweredByHeader: false,
+  async redirects() {
+    return [{ source: '/admin', destination: '/dashboard.html', permanent: false }]
+  },
 }
 module.exports = nextConfig

@@ -3,203 +3,620 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
 <title>Manage Cars</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
-:root{--navy:#0b1f4f;--blue:#1d5fd6;--ink:#0d1b3d;--muted:#5b6785;--line:#e6eaf3;--bg:#f3f6fc;--red:#e03131;--sb:216px}
+:root{
+  --navy:#0b1f4f; --blue:#1d5fd6; --ink:#0d1b3d; --muted:#5b6785;
+  --line:#e6eaf3; --bg:#f3f6fc; --red:#e03131;
+  --fs-base:clamp(14px,1.35vw,21px);
+  --sb:216px;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;display:flex}
-.sidebar{width:var(--sb);background:linear-gradient(180deg,#0b1f4f,#0a2a6b);color:#fff;position:sticky;top:0;height:100vh}
-.logo{height:100px;display:flex;align-items:center;justify-content:center}
-.nav{padding:0 14px;margin-top:20px}
-.nav a{display:flex;align-items:center;gap:14px;min-height:64px;padding:0 24px;color:#e8eefc;text-decoration:none;font-size:18px;border-radius:10px}
-.nav a.active{background:var(--blue)}
-.main{flex:1}
-.topbar{height:80px;background:#f7f9fe;border-bottom:2px solid #d4dbea;display:flex;align-items:center;justify-content:space-between;padding:0 28px}
-.content{padding:28px}
-.page-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:16px}
-.title-wrap h1{font-size:32px;color:var(--navy)}
-.btn-add{background:var(--navy);color:#fff;padding:16px 24px;border-radius:10px;font-size:18px;border:0;cursor:pointer}
-.card{background:#fff;border-radius:14px;border:1px solid var(--line);overflow:hidden}
-table{width:100%;border-collapse:collapse}
-thead th{background:var(--navy);color:#fff;padding:16px 8px}
-tbody td{padding:16px 8px;border-bottom:1px solid var(--line);text-align:center}
-td.name{text-align:start;font-weight:700}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center}
+html{-webkit-text-size-adjust:100%}
+body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;min-height:100dvh;display:flex;overflow-x:hidden}
+button{font-family:inherit;cursor:pointer;border:0;-webkit-tap-highlight-color:transparent}
+svg{display:block}
+body.lock{overflow:hidden}
+:focus-visible{outline:3px solid #4d8dff;outline-offset:2px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Sidebar ---------- */
+.sidebar{width:var(--sb);flex-shrink:0;background:linear-gradient(180deg,#0b1f4f 0%,#0a2a6b 55%,#0b1f4f 100%);color:#fff;position:sticky;top:0;height:100vh;height:100dvh;overflow:hidden;z-index:40}
+.sidebar::after{content:"";position:absolute;inset-inline-start:-40px;bottom:-60px;width:330px;height:420px;background:linear-gradient(135deg,rgba(255,255,255,0) 40%,rgba(30,80,170,.35));transform:skewX(-35deg) translateX(60px);pointer-events:none}
+body.collapsed .sidebar{display:none}
+.logo{height:100px;display:flex;align-items:center;justify-content:center;padding-top:6px}
+.nav{padding:0 14px;margin-top:20px;position:relative;z-index:1}
+.nav a{display:flex;align-items:center;gap:14px;min-height:64px;padding:0 24px;color:#e8eefc;text-decoration:none;font-size:18px;border-radius:10px;margin-bottom:2px;transition:background .2s}
+.nav a:hover{background:rgba(255,255,255,.08)}
+.nav a.active{background:var(--blue);border-inline-start:4px solid #4d8dff;padding-inline-start:20px;font-weight:500}
+.nav svg{width:34px;height:34px;flex-shrink:0}
+.scrim{position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(8,20,50,.55);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;z-index:35}
+.scrim.show{opacity:1;visibility:visible}
+
+/* ---------- Main ---------- */
+.main{flex:1;min-width:0}
+.topbar{height:clamp(68px,8vw,100px);background:linear-gradient(180deg,#edf1fa,#f7f9fe);border-bottom:2px solid #d4dbea;display:flex;align-items:center;justify-content:space-between;padding-block:0;padding-inline:clamp(14px,3vw,42px) clamp(14px,2vw,28px);padding-top:env(safe-area-inset-top)}
+.burger{background:none;display:flex;flex-direction:column;justify-content:center;gap:7px;width:48px;height:48px;align-items:center;border-radius:8px}
+.burger span{display:block;width:34px;height:4px;background:var(--ink);border-radius:2px}
+
+.content{padding:clamp(16px,2.6vw,36px) clamp(12px,2vw,28px) 40px;padding-bottom:calc(40px + env(safe-area-inset-bottom))}
+.page-head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:clamp(18px,2.4vw,30px)}
+.title-wrap{display:flex;align-items:center;gap:clamp(14px,2.4vw,32px);padding-inline-start:8px;min-width:0}
+.title-wrap svg{width:clamp(48px,6vw,86px);height:auto;flex-shrink:0}
+.title-wrap h1{font-size:clamp(26px,3vw,40px);line-height:1.1;font-weight:700;letter-spacing:-.5px;color:var(--navy)}
+.title-wrap p{font-size:clamp(14px,1.5vw,20px);color:#2c3a5e;margin-top:6px}
+.btn-add{display:flex;align-items:center;justify-content:center;gap:clamp(10px,1.2vw,16px);background:var(--navy);color:#fff;font-size:clamp(16px,1.6vw,21px);font-weight:600;min-height:56px;height:clamp(56px,5vw,64px);padding:0 clamp(18px,2vw,26px);border-radius:10px;box-shadow:0 6px 14px rgba(11,31,79,.25);transition:transform .15s,background .15s;white-space:nowrap}
+.btn-add:hover{background:#12307a;transform:translateY(-1px)}
+.btn-add svg{width:clamp(20px,2vw,26px);height:clamp(20px,2vw,26px)}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 2px 10px rgba(30,50,100,.05);padding-top:14px;overflow:hidden}
+.filters{display:flex;flex-wrap:wrap;gap:clamp(10px,1.5vw,22px);padding:0 12px 24px}
+.field{height:clamp(50px,4.2vw,58px);background:#fff;border:1.5px solid #dfe5f1;border-radius:10px;display:flex;align-items:center;padding:0 18px;font-size:clamp(15px,1.4vw,20px);color:#2a3558;position:relative}
+.field.search{flex:1 1 100%;gap:14px}
+.field.search svg{flex-shrink:0;width:clamp(20px,1.8vw,26px);height:clamp(20px,1.8vw,26px)}
+.field.search input{border:0;outline:0;font:inherit;width:100%;color:var(--ink);background:transparent;min-width:0}
+.field.search input::placeholder{color:#6a7592}
+.field:focus-within{border-color:var(--blue);box-shadow:0 0 0 3px rgba(29,95,214,.12)}
+
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:760px}
+thead th{background:var(--navy);color:#fff;font-size:var(--fs-base);font-weight:600;height:clamp(50px,4.5vw,63px);text-align:center;white-space:nowrap;padding:0 8px}
+thead th.start{text-align:start}
+tbody td{height:clamp(58px,4.8vw,67.5px);text-align:center;font-size:var(--fs-base);border-bottom:1px solid var(--line);white-space:nowrap;padding:0 8px}
+tbody tr:hover{background:#f7f9fe}
+td.img{width:clamp(100px,11vw,170px)}
+td.name{text-align:start;font-weight:700;color:var(--ink)}
+td.price{font-weight:700}
+td.img svg{width:clamp(90px,9.5vw,140px);height:auto;margin:0 auto}
+.badge,.status{display:inline-flex;align-items:center;gap:10px;min-height:36px;padding:6px 18px 6px 16px;border-radius:999px;font-size:clamp(13px,1.3vw,19.5px);font-weight:500}
+.badge svg{width:1.1em;height:1.1em;flex-shrink:0}
+.badge.essence{background:#e1ebfd;color:#1850c8}
+.badge.diesel{background:#e8ecf3;color:#1b2a4e}
+.badge.hybride{background:#dff6e6;color:#16732f}
+.seats{display:inline-flex;align-items:center;gap:10px}
+.seats svg{width:.95em;height:.95em}
+.status::before{content:"";width:.65em;height:.65em;border-radius:50%;background:currentColor;flex-shrink:0}
+.status.available{background:#dcf5e3;color:#177a33}
+.status.reserved{background:#fdecc8;color:#b45309}
+.actions{display:inline-flex;gap:clamp(10px,1.4vw,19px)}
+.ic{width:48px;height:44px;min-width:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;transition:filter .15s,transform .15s}
+.ic:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.ic.edit{background:var(--blue)}
+.ic.del{background:var(--red)}
+.ic svg{width:21px;height:21px}
+.empty{height:120px;color:var(--muted);font-size:18px}
+
+
+/* ---------- Modal ---------- */
+.modal{position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(8,20,50,.55);display:none;align-items:center;justify-content:center;z-index:60;padding:16px}
 .modal.open{display:flex}
-.box{background:#fff;padding:26px;border-radius:14px;width:100%;max-width:460px}
-.box input,.box select{width:100%;height:44px;margin:6px 0 12px;padding:0 12px;border:1.5px solid #dfe5f1;border-radius:8px}
-.btns{display:flex;gap:10px;justify-content:flex-end;margin-top:16px}
-.btns button{padding:12px 20px;border-radius:8px;border:0;cursor:pointer}
+.box{background:#fff;border-radius:14px;width:100%;max-width:460px;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow-y:auto;overscroll-behavior:contain;padding:26px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.box h2{font-size:24px;margin-bottom:10px;color:var(--navy)}
+.box label{display:block;font-size:14px;font-weight:600;color:var(--muted);margin:12px 0 6px}
+.box input,.box select{width:100%;height:46px;border:1.5px solid #dfe5f1;border-radius:8px;padding:0 12px;font:inherit;font-size:16px;outline:0;background:#fff;color:var(--ink)}
+.box input:focus,.box select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(29,95,214,.12)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.box .btns{display:flex;justify-content:flex-end;gap:10px;margin-top:22px;position:sticky;bottom:-26px;background:#fff;padding:12px 0 0}
+.box .btns button{min-height:46px;padding:0 22px;border-radius:8px;font-size:16px;font-weight:600}
+.b-cancel{background:#e8ecf3;color:var(--ink)}
 .b-save{background:var(--navy);color:#fff}
-.b-cancel{background:#e8ecf3}
-html[lang=ar] body{font-family:"Noto Sans Arabic",sans-serif}
+
+body:not(.ready){visibility:hidden}
+
+/* ---------- Language switcher + Arabic ---------- */
+html[lang=ar] body{font-family:"Noto Sans Arabic","Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+html[lang=ar] .title-wrap h1{letter-spacing:0}
+
+.lang{position:relative}
+.lang-btn{display:flex;align-items:center;gap:10px;min-height:48px;padding:0 16px;background:#fff;border:1.5px solid #dfe5f1;border-radius:10px;font-size:clamp(15px,1.4vw,18px);font-weight:600;color:var(--navy);transition:border-color .15s}
+.lang-btn:hover,.lang-btn[aria-expanded=true]{border-color:var(--blue)}
+.lang-btn .chev{transition:transform .2s}
+.lang-btn[aria-expanded=true] .chev{transform:rotate(180deg)}
+.lang-menu{position:absolute;top:calc(100% + 8px);inset-inline-end:0;min-width:180px;list-style:none;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 30px rgba(11,31,79,.18);padding:6px;z-index:45}
+.lang-menu button{width:100%;min-height:46px;padding:0 14px;background:none;border-radius:8px;text-align:start;font-size:17px;font-weight:500;color:var(--ink);display:flex;justify-content:space-between;align-items:center}
+.lang-menu button:hover{background:#eef2fa}
+.lang-menu button.on{background:#e1ebfd;color:#1850c8;font-weight:700}
+.lang-menu button.on::after{content:"\2713"}
+
+/* ---------- Logout confirmation + toast ---------- */
+.box.confirm{max-width:400px;text-align:center}
+.box.confirm p{color:var(--muted);font-size:16px;line-height:1.5}
+.box.confirm .btns{justify-content:center;position:static;padding-top:0}
+.box.confirm .btns button{flex:1}
+.c-icon{width:64px;height:64px;border-radius:50%;background:#fde8e8;color:var(--red);display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.c-icon svg{width:30px;height:30px}
+.b-danger{background:var(--red);color:#fff}
+.toast{position:fixed;left:16px;right:16px;bottom:calc(24px + env(safe-area-inset-bottom));margin:0 auto;max-width:360px;background:var(--navy);color:#fff;padding:14px 18px;border-radius:10px;text-align:center;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.3);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s;z-index:70}
+.toast.show{opacity:1;transform:none}
+
+/* ---------- Car photo ---------- */
+td.img .photo{display:block;width:clamp(90px,9.5vw,140px);aspect-ratio:5/2;object-fit:cover;border-radius:8px;margin:0 auto;border:1px solid var(--line);background:#eef2fa}
+.upload{display:flex;align-items:center;gap:14px;margin-top:2px}
+.upload .prev{width:120px;height:72px;border-radius:10px;border:1.5px dashed #c5cee3;background:#f3f6fc;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.upload .prev img{width:100%;height:100%;object-fit:cover}
+.upload .prev svg{width:38px;height:38px;opacity:.45}
+.upload-btns{display:flex;flex-direction:column;gap:8px;align-items:flex-start;min-width:0}
+.upload-btns button{min-height:44px;padding:0 16px;border-radius:8px;background:#e1ebfd;color:#1850c8;font-weight:600;font-size:15px}
+.upload-btns .b-rm{background:none;color:var(--red);min-height:36px;padding:0}
+.hint{font-size:12px;color:var(--muted)}
+
+/* ---------- Tablet / small laptop: sidebar becomes a drawer ---------- */
+@media (max-width:1024px){
+  .sidebar{position:fixed;top:0;bottom:0;inset-inline-start:0;width:260px;height:auto;transform:translateX(-100%);transition:transform .28s ease;box-shadow:none}
+  [dir=rtl] .sidebar{transform:translateX(100%)}
+  .sidebar.open{transform:none;box-shadow:0 0 40px rgba(0,0,0,.35)}
+  body.collapsed .sidebar{display:block}
+}
+
+/* ---------- Phones: table becomes cards ---------- */
+@media (max-width:700px){
+  .page-head{flex-direction:column;align-items:stretch}
+  .btn-add{width:100%}
+  .filters{flex-direction:column}
+  .field.search{flex:1 1 auto;width:100%}
+  .table-wrap{overflow:visible}
+  table,tbody{display:block;min-width:0}
+  thead{display:none}
+  tbody tr{display:block;margin:0 12px 14px;border:1px solid var(--line);border-radius:12px;padding:10px 14px 14px;background:#fff;box-shadow:0 1px 6px rgba(30,50,100,.05)}
+  tbody tr:hover{background:#fff}
+  tbody td{display:flex;align-items:center;justify-content:space-between;gap:12px;height:auto;min-height:46px;border:0;border-bottom:1px dashed var(--line);text-align:end;font-size:16px;padding:6px 0;white-space:normal}
+  tbody td::before{content:attr(data-label);font-size:13px;font-weight:600;color:var(--muted);text-align:start}
+  tbody td.img{width:auto;justify-content:center;border-bottom:0}
+  tbody td.img::before{display:none}
+  td.img svg,td.img .photo{width:170px}
+  tbody td.name{font-size:20px;justify-content:center;border-bottom:1px solid var(--line);margin-bottom:4px}
+  tbody td.name::before{display:none}
+  tbody td.actions-cell{border-bottom:0;padding-top:12px;justify-content:stretch}
+  tbody td.actions-cell::before{display:none}
+  .actions{width:100%}
+  .actions .ic{flex:1;height:48px}
+  .empty{display:block;text-align:center;padding:30px 0}
+  .empty::before{display:none}
+  .badge,.status{font-size:14px}
+  .box{padding:20px}
+  .box .btns{bottom:-20px}
+  .row2{grid-template-columns:1fr}
+}
+
+@media (max-width:380px){
+  .title-wrap{padding-inline-start:0}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;animation:none !important}
+}
 </style>
 </head>
 <body>
-<aside class="sidebar">
-  <div class="logo"><b style="font-size:20px">MAMOU</b></div>
+
+<aside class="sidebar" id="sidebar" aria-label="Main navigation" data-i18n-aria="navAria">
+  <div class="logo">
+    <svg width="142" height="52" viewBox="0 0 142 52" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M3 38c0-6 3-9 9-10l14-3 14-14c3-3 6-4 12-4h22c8 0 14 2 20 8l14 10 9 4c3 1 4 3 4 6v3"/>
+      <path d="M40 11l-4 12M96 12l-6 14M52 11h40"/>
+      <path d="M3 38h8M40 38h56M124 38h8"/>
+      <path d="M12 38a12 12 0 0 1 24 0"/>
+      <path d="M100 38a12 12 0 0 1 24 0"/>
+    </svg>
+  </div>
   <nav class="nav">
-    <a href="#" class="active">Voitures</a>
-    <a href="#" id="logout">Déconnexion</a>
+    <a href="#" class="active" aria-current="page">
+      <svg viewBox="0 0 34 34" fill="#fff" aria-hidden="true"><path d="M8.5 9.5C9 8 10 7 12 7h10c2 0 3 1 3.500 2.500L27 14c1.700.3 3 1.500 3 3.300V24c0 .8-.6 1.400-1.400 1.400H27.500V27a1.400 1.400 0 0 1-1.400 1.400h-1.600A1.400 1.400 0 0 1 23 27v-1.600H11V27a1.400 1.400 0 0 1-1.400 1.400H8A1.400 1.400 0 0 1 6.500 27v-1.600H5.400C4.600 25.400 4 24.800 4 24v-6.700C4 15.500 5.300 14.300 7 14l1.500-4.500zm3 .5L10.300 14h13.400L22.500 10h-11zM9.500 17.500a1.800 1.800 0 1 0 0 3.600 1.800 1.800 0 0 0 0-3.600zm15 0a1.800 1.800 0 1 0 0 3.600 1.800 1.800 0 0 0 0-3.600z"/></svg>
+      <span data-i18n="navCars">Cars</span>
+    </a>
+    <a href="#" id="logout">
+      <svg viewBox="0 0 34 34" fill="none" stroke="#fff" stroke-width="2.800" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5H7a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h6"/><path d="M12 17h17M23 10l7 7-7 7"/></svg>
+      <span data-i18n="navLogout">Logout</span>
+    </a>
   </nav>
 </aside>
+<div class="scrim" id="scrim"></div>
+
 <div class="main">
   <header class="topbar">
-    <div></div>
-    <button id="langBtn" style="padding:10px 16px;border-radius:10px;border:1.5px solid #dfe5f1;background:#fff">Français</button>
+    <button class="burger" id="burger" aria-label="Toggle menu" data-i18n-aria="menu" aria-controls="sidebar" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="lang" id="lang">
+      <button type="button" class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Langue" data-i18n-aria="langAria">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.800 2.700 4 5.700 4 9s-1.200 6.300-4 9c-2.800-2.700-4-5.700-4-9s1.200-6.300 4-9z"/></svg>
+        <span id="langName">Français</span>
+        <svg class="chev" width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.800" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6l7 7 7-7"/></svg>
+      </button>
+      <ul class="lang-menu" id="langMenu" role="listbox" hidden>
+        <li role="none"><button type="button" role="option" data-lang="fr">Français</button></li>
+        <li role="none"><button type="button" role="option" data-lang="ar">العربية</button></li>
+      </ul>
+    </div>
   </header>
-  <div class="content">
+
+  <main class="content">
     <div class="page-head">
       <div class="title-wrap">
-        <h1 id="title">Gestion des voitures</h1>
-        <p id="subtitle">Ajoutez, modifiez ou supprimez des voitures</p>
+        <svg viewBox="0 0 86 70" fill="#0b1f4f" aria-hidden="true">
+          <path d="M20 8c2-5 6-7 12-7h22c6 0 10 2 12 7l5 14c6 1 12 5 12 12v14c0 3-2 5-5 5h-4v6c0 2-2 4-4 4h-8c-2 0-4-2-4-4v-6H26v6c0 2-2 4-4 4h-8c-2 0-4-2-4-4v-6H5c-3 0-5-2-5-5V34c0-7 6-11 12-12L20 8zm8 4l-4 10h38L58 12H28z" transform="translate(2 -1) scale(.98)"/>
+          <ellipse cx="17" cy="42" rx="6" ry="4.500" fill="#fff"/><ellipse cx="69" cy="42" rx="6" ry="4.500" fill="#fff"/>
+          <rect x="31" y="44" width="24" height="5" rx="2.500" fill="#fff"/>
+        </svg>
+        <div>
+          <h1 data-i18n="title">Manage Cars</h1>
+          <p data-i18n="subtitle">Add, edit or remove cars from your website</p>
+        </div>
       </div>
-      <button class="btn-add" id="addBtn">+ Ajouter une voiture</button>
+      <button class="btn-add" id="addBtn">
+        <svg viewBox="0 0 26 26" stroke="#fff" stroke-width="3.200" stroke-linecap="round" aria-hidden="true"><path d="M13 3v20M3 13h20"/></svg>
+        <span data-i18n="add">Add New Car</span>
+      </button>
     </div>
-    <div class="card">
-      <div style="padding:16px">
-        <input id="q" type="search" placeholder="Rechercher..." style="width:100%;height:48px;padding:0 16px;border:1.5px solid #dfe5f1;border-radius:10px">
+
+    <section class="card">
+      <div class="filters">
+        <label class="field search">
+          <svg viewBox="0 0 26 26" fill="none" stroke="#0d1b3d" stroke-width="2.800" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7.500"/><path d="M17 17l6 6"/></svg>
+          <span class="sr" data-i18n="searchLabel">Search by car name</span>
+          <input id="q" type="search" placeholder="Search by car name..." data-i18n-ph="search" autocomplete="off">
+        </label>
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Image</th><th>Nom</th><th>Année</th><th>Carburant</th><th>Places</th><th>Prix</th><th>Statut</th><th>Actions</th>
-          </tr>
-        </thead>
-        <tbody id="rows"></tbody>
-      </table>
-    </div>
-  </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th data-i18n="image">Image</th>
+              <th class="start" data-i18n="name">Car Name</th>
+              <th data-i18n="year">Year</th>
+              <th data-i18n="fuel">Fuel Type</th>
+              <th data-i18n="seats">Seats</th>
+              <th data-i18n="price">Price (DH)</th>
+              <th data-i18n="status">Status</th>
+              <th data-i18n="actions">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
 </div>
 
-<div class="modal" id="modal">
+<!-- Add / Edit modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
   <div class="box">
-    <h2 id="mTitle">Ajouter</h2>
-    <label>Nom</label><input id="fName">
-    <label>Année</label><input id="fYear" type="number" value="2024">
-    <label>Places</label><input id="fSeats" type="number" value="5">
-    <label>Carburant</label>
-    <select id="fFuel"><option>Essence</option><option>Diesel</option><option>Hybride</option></select>
-    <label>Prix</label><input id="fPrice" type="number" value="300">
-    <label>Statut</label>
-    <select id="fStatus"><option value="Available">Disponible</option><option value="Reserved">Réservée</option></select>
-    <div class="btns">
-      <button class="b-cancel" id="cancel">Annuler</button>
-      <button class="b-save" id="save">Enregistrer</button>
+    <h2 id="mTitle">Add New Car</h2>
+    <label for="fName" data-i18n="name">Car Name</label><input id="fName" placeholder="e.g. Dacia Logan" data-i18n-ph="phName">
+    <div class="row2">
+      <div><label for="fYear" data-i18n="year">Year</label><input id="fYear" type="number" inputmode="numeric" min="2000" max="2030" value="2025"></div>
+      <div><label for="fSeats" data-i18n="seats">Seats</label><input id="fSeats" type="number" inputmode="numeric" min="2" max="9" value="5"></div>
     </div>
+    <div class="row2">
+      <div><label for="fFuel" data-i18n="fuel">Fuel Type</label><select id="fFuel"><option value="Essence" data-i18n="Essence">Essence</option><option value="Diesel" data-i18n="Diesel">Diesel</option><option value="Hybride" data-i18n="Hybride">Hybride</option></select></div>
+      <div><label for="fPrice" data-i18n="price">Price (DH)</label><input id="fPrice" type="number" inputmode="numeric" min="0" value="300"></div>
+    </div>
+    <label for="fStatus" data-i18n="status">Status</label>
+    <select id="fStatus"><option value="Available" data-i18n="Available">Available</option><option value="Reserved" data-i18n="Reserved">Reserved</option></select>
+    <label data-i18n="photo">Car photo</label>
+    <div class="upload">
+      <div class="prev" id="prev"></div>
+      <div class="upload-btns">
+        <button type="button" id="pick" data-i18n="gallery">Choose from gallery</button>
+        <button type="button" id="snap" data-i18n="camera">Take a photo</button>
+        <button type="button" class="b-rm" id="rmPhoto" data-i18n="removePhoto" hidden>Remove photo</button>
+      </div>
+    </div>
+    <span class="hint" data-i18n="photoHint">JPG or PNG, resized automatically</span>
+    <input type="file" id="fFile" accept="image/*" hidden>
+    <input type="file" id="fCam" accept="image/*" capture="environment" hidden>
+    <div class="btns"><button class="b-cancel" id="cancel" type="button" data-i18n="cancel">Cancel</button><button class="b-save" id="save" type="button" data-i18n="save">Save</button></div>
   </div>
 </div>
 
+<!-- Logout confirmation -->
+<div class="modal" id="confirm" role="alertdialog" aria-modal="true" aria-labelledby="cTitle" aria-describedby="cMsg">
+  <div class="box confirm">
+    <div class="c-icon"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2.800" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5H7a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h6"/><path d="M12 17h17M23 10l7 7-7 7"/></svg></div>
+    <h2 id="cTitle" data-i18n="logoutQ">Se déconnecter ?</h2>
+    <p id="cMsg" data-i18n="logoutMsg">Voulez-vous vraiment vous déconnecter ?</p>
+    <div class="btns"><button class="b-cancel" id="cNo" type="button" data-i18n="cancel">Annuler</button><button class="b-danger" id="cYes" type="button" data-i18n="navLogout">Déconnexion</button></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
+/* ---------- Supabase ---------- */
 const SUPABASE_URL = 'https://silojlgiomgbsrpsdiug.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_6EEteo2WcQtnyDiNNY3iTQ_XRtYBt1r';
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+const SUPABASE_KEY = 'sb_publishable_6EEteo2WcQtnyDiNNY3iTQ_XRtYBt1r'; /* publishable key: safe in the browser, RLS protects writes */
+const BUCKET = 'cars';
+if (!window.supabase){ document.body.classList.add('ready'); alert('Supabase failed to load (check your connection).'); throw new Error('supabase-js missing'); }
+const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-let cars = [], editId = null, lang = 'fr';
+let cars = [], loaded = false;
+let editId = null, pendingImage = null, pendingBlob = null, busy = false;
 
+const LANG_KEY = 'mamou-dashboard-lang';
+
+/* ---------- Translations: EN / FR / AR ---------- */
 const I18N = {
-  fr: { title: 'Gestion des voitures', subtitle: 'Ajoutez, modifiez ou supprimez des voitures', add: 'Ajouter une voiture', none: 'Aucune voiture' },
-  ar: { title: 'إدارة السيارات', subtitle: 'أضف أو عدّل أو احذف السيارات', add: 'إضافة سيارة', none: 'لا توجد سيارات' }
+ fr:{langName:"Français",title:"Gestion des voitures",subtitle:"Ajoutez, modifiez ou supprimez des voitures de votre site",add:"Ajouter une voiture",search:"Rechercher par nom de voiture...",searchLabel:"Rechercher par nom de voiture",
+  navCars:"Voitures",navLogout:"Déconnexion",navAria:"Navigation principale",menu:"Ouvrir/fermer le menu",langAria:"Langue",
+  image:"Image",name:"Nom de la voiture",year:"Année",fuel:"Carburant",seats:"Places",price:"Prix (DH)",status:"Statut",actions:"Actions",
+  Essence:"Essence",Diesel:"Diesel",Hybride:"Hybride",Available:"Disponible",Reserved:"Réservée",dh:"DH",
+  none:"Aucune voiture trouvée.",editTitle:"Modifier la voiture",phName:"ex. Dacia Logan",
+  photo:"Photo de la voiture",gallery:"Choisir dans la galerie",camera:"Prendre une photo",removePhoto:"Supprimer la photo",photoHint:"JPG ou PNG, redimensionnée automatiquement",
+  cancel:"Annuler",save:"Enregistrer",confirmDel:'Supprimer « {name} » de votre site ?',editAria:"Modifier {name}",delAria:"Supprimer {name}",
+  logoutQ:"Se déconnecter ?",logoutMsg:"Voulez-vous vraiment vous déconnecter ?",errLoad:"Impossible de charger les voitures.",errSave:"Échec de l'enregistrement.",errDelete:"Échec de la suppression.",errUpload:"Échec de l'envoi de la photo.",saving:"Enregistrement…",loading:"Chargement…",loggedOut:"Vous êtes déconnecté",imgErr:"Impossible de lire cette image.",storeErr:"Espace insuffisant pour enregistrer. Utilisez des photos plus petites."},
+ ar:{langName:"العربية",title:"إدارة السيارات",subtitle:"أضف أو عدّل أو احذف السيارات من موقعك",add:"إضافة سيارة جديدة",search:"ابحث باسم السيارة...",searchLabel:"ابحث باسم السيارة",
+  navCars:"السيارات",navLogout:"تسجيل الخروج",navAria:"القائمة الرئيسية",menu:"فتح/إغلاق القائمة",langAria:"اللغة",
+  image:"الصورة",name:"اسم السيارة",year:"السنة",fuel:"نوع الوقود",seats:"المقاعد",price:"السعر (درهم)",status:"الحالة",actions:"الإجراءات",
+  Essence:"بنزين",Diesel:"ديزل",Hybride:"هجين",Available:"متاحة",Reserved:"محجوزة",dh:"درهم",
+  none:"لم يتم العثور على سيارات.",editTitle:"تعديل السيارة",phName:"مثال: داسيا لوغان",
+  photo:"صورة السيارة",gallery:"اختيار من المعرض",camera:"التقاط صورة",removePhoto:"حذف الصورة",photoHint:"JPG أو PNG، يتم تصغيرها تلقائيا",
+  cancel:"إلغاء",save:"حفظ",confirmDel:'هل تريد حذف "{name}" من موقعك؟',editAria:"تعديل {name}",delAria:"حذف {name}",
+  logoutQ:"تسجيل الخروج؟",logoutMsg:"هل تريد فعلا تسجيل الخروج؟",errLoad:"تعذر تحميل السيارات.",errSave:"فشل الحفظ.",errDelete:"فشل الحذف.",errUpload:"فشل رفع الصورة.",saving:"جارٍ الحفظ…",loading:"جارٍ التحميل…",loggedOut:"تم تسجيل الخروج",imgErr:"تعذر قراءة هذه الصورة.",storeErr:"مساحة التخزين غير كافية. استعمل صورا أصغر."}
 };
+let lang = 'fr';
+try { lang = localStorage.getItem(LANG_KEY) || 'fr'; } catch(e){}
+if (!I18N[lang]) lang = 'fr';
+const t = k => (I18N[lang] && I18N[lang][k]) || I18N.fr[k] || k;
 
-async function load() {
-  const { data, error } = await supabase.from('cars').select('*').order('created_at', { ascending: false });
-  if (error) { alert(error.message); return; }
-  cars = data || [];
+function applyLang(){
+  const h = document.documentElement;
+  h.lang = lang; h.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.querySelectorAll('[data-i18n]').forEach(el => el.textContent = t(el.dataset.i18n));
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => el.placeholder = t(el.dataset.i18nPh));
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => el.setAttribute('aria-label', t(el.dataset.i18nAria)));
+  document.querySelectorAll('[data-lang]').forEach(b => { const on = b.dataset.lang === lang; b.classList.toggle('on', on); b.setAttribute('aria-selected', on); });
+  $('#langName').textContent = I18N[lang].langName;
+  document.title = t('title');
+  setModalTitle();
   render();
 }
+function setLang(l){ lang = l; try { localStorage.setItem(LANG_KEY, l); } catch(e){} applyLang(); }
+function setModalTitle(){ $('#mTitle').textContent = editId ? t('editTitle') : t('add'); }
 
-function render() {
-  const q = document.getElementById('q').value.toLowerCase();
-  const list = cars.filter(c => c.name.toLowerCase().includes(q));
-  const tbody = document.getElementById('rows');
-  tbody.innerHTML = list.length ? list.map(c => `
+
+const esc = s => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+
+/* ---------- Icons ---------- */
+const pump = '<svg viewBox="0 0 22 22" fill="currentColor" aria-hidden="true"><path d="M4 3.500A1.500 1.500 0 0 1 5.500 2h6A1.500 1.500 0 0 1 13 3.500V10h1.200c1 0 1.800.8 1.800 1.800v3.200a.9.900 0 0 0 1.800 0V8.500l-1.500-1.500.9-.9 2.600 2.600V15a2.700 2.700 0 0 1-5.400 0v-3H13v8.500H4V3.500zM6 4v4.500h5V4H6z"/></svg>';
+const leaf = '<svg viewBox="0 0 22 22" fill="currentColor" aria-hidden="true"><path d="M19 3C9 3 3 8 3 14c0 1.500.5 2.800 1.300 3.700C6 14 9 11.500 13 10c-3 2-5.500 4.500-7 8.300C7 19.500 8.400 20 10 20c6 0 9-6 9-17z"/></svg>';
+const user = '<svg viewBox="0 0 20 20" fill="#0b1f4f" aria-hidden="true"><circle cx="10" cy="5.500" r="4"/><path d="M2 18c0-4 3-6.500 8-6.500s8 2.500 8 6.500z"/></svg>';
+const pencil = '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.400" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1-4L16.500 4.500a2.100 2.100 0 0 1 3 3L8 19l-4 1z"/><path d="M14.500 6.500l3 3"/></svg>';
+const trash = '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.500 6h17M9 6V4h6v2M6 6l1 14h10l1-14M10 10v6M14 10v6"/></svg>';
+
+function carSVG(c, i){
+  const roofTop = [10,8,6,9,7,8,10][i % 7];
+  return `<svg viewBox="0 0 140 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <ellipse cx="70" cy="50" rx="62" ry="4" fill="rgba(0,0,0,.14)"/>
+    <path d="M8 38c0-5 2-8 7-9l14-3 14-${roofTop+6}c4-4 9-5 16-5h20c8 0 13 2 18 8l8 9 15 4c5 1 7 4 7 9v3c0 2-1 3-3 3H11c-2 0-3-1-3-3z" fill="${c}" stroke="rgba(0,0,0,.35)" stroke-width="1"/>
+    <path d="M40 24l10-11c3-3 6-3 11-3h18c6 0 9 2 12 6l7 8z" fill="#1b2230"/>
+    <path d="M70 10v14" stroke="${c}" stroke-width="2.500"/>
+    <path d="M10 36h122" stroke="rgba(0,0,0,.2)" stroke-width="1"/>
+    <rect x="118" y="30" width="12" height="4" rx="2" fill="#ffd66b"/>
+    <rect x="9" y="31" width="9" height="4" rx="2" fill="#e24b4b"/>
+    <circle cx="38" cy="43" r="10" fill="#14171d"/><circle cx="38" cy="43" r="5.500" fill="#cfd5df"/><circle cx="38" cy="43" r="2" fill="#6b7383"/>
+    <circle cx="106" cy="43" r="10" fill="#14171d"/><circle cx="106" cy="43" r="5.500" fill="#cfd5df"/><circle cx="106" cy="43" r="2" fill="#6b7383"/>
+  </svg>`;
+}
+
+/* ---------- Render ---------- */
+const $ = s => document.querySelector(s);
+const rowsEl = $('#rows'), q = $('#q');
+
+async function load(){
+  const { data, error } = await sb.from('cars').select('*')
+    .order('sort_order', { ascending: true }).order('created_at', { ascending: false });
+  loaded = true;
+  if (error){ toast(t('errLoad')); render(); return; }
+  cars = data || []; render();
+}
+function removeImage(url){
+  if (!url) return;
+  const part = url.split(`/storage/v1/object/public/${BUCKET}/`)[1];
+  if (part) sb.storage.from(BUCKET).remove([decodeURIComponent(part.split('?')[0])]).catch(() => {});
+}
+
+function filtered(){
+  const t = q.value.trim().toLowerCase();
+  return cars.filter(c => c.name.toLowerCase().includes(t));
+}
+
+function render(){
+  const list = filtered();
+  rowsEl.innerHTML = list.length ? list.map((c,i)=>`
     <tr>
-      <td>${c.image_url ? `<img src="${c.image_url}" style="width:100px;height:50px;object-fit:cover;border-radius:8px">` : '🚗'}</td>
-      <td class="name">${c.name}</td>
-      <td>${c.year}</td>
-      <td>${c.fuel}</td>
-      <td>${c.seats}</td>
-      <td>${c.price} DH</td>
-      <td>${c.status}</td>
-      <td>
-        <button onclick="edit(${c.id})" style="background:#1d5fd6;color:#fff;border:0;padding:8px 12px;border-radius:6px;margin:0 4px">✏️</button>
-        <button onclick="del(${c.id})" style="background:#e03131;color:#fff;border:0;padding:8px 12px;border-radius:6px">🗑️</button>
-      </td>
-    </tr>
-  `).join('') : `<tr><td colspan="8" style="padding:40px;color:#5b6785">${I18N[lang].none}</td></tr>`;
+      <td class="img">${c.image_url ? `<img class="photo" src="${esc(c.image_url)}" alt="${esc(c.name)}" loading="lazy">` : carSVG(c.color || '#1f4fb0', i)}</td>
+      <td class="name" data-label="${t('name')}">${esc(c.name)}</td>
+      <td data-label="${t('year')}">${c.year}</td>
+      <td data-label="${t('fuel')}"><span class="badge ${c.fuel.toLowerCase()}">${c.fuel==='Hybride'?leaf:pump}${t(c.fuel)}</span></td>
+      <td data-label="${t('seats')}"><span class="seats">${user}${c.seats}</span></td>
+      <td class="price" data-label="${t('price')}">${c.price} ${t('dh')}</td>
+      <td data-label="${t('status')}"><span class="status ${c.status.toLowerCase()}">${t(c.status)}</span></td>
+      <td class="actions-cell" data-label="${t('actions')}"><div class="actions">
+        <button class="ic edit" data-edit="${c.id}" aria-label="${esc(t('editAria').replace('{name}', c.name))}">${pencil}</button>
+        <button class="ic del" data-del="${c.id}" aria-label="${esc(t('delAria').replace('{name}', c.name))}">${trash}</button>
+      </div></td>
+    </tr>`).join('') : `<tr><td class="empty" colspan="8">${loaded ? t('none') : t('loading')}</td></tr>`;
 }
 
-function edit(id) {
-  const c = cars.find(x => x.id === id);
-  editId = id;
-  document.getElementById('fName').value = c.name;
-  document.getElementById('fYear').value = c.year;
-  document.getElementById('fSeats').value = c.seats;
-  document.getElementById('fFuel').value = c.fuel;
-  document.getElementById('fPrice').value = c.price;
-  document.getElementById('fStatus').value = c.status;
-  document.getElementById('mTitle').textContent = 'Modifier';
-  document.getElementById('modal').classList.add('open');
-}
+/* ---------- Search / row actions ---------- */
+q.addEventListener('input', render);
 
-async function del(id) {
-  if (!confirm('Supprimer ?')) return;
-  await supabase.from('cars').delete().eq('id', id);
-  load();
-}
-
-document.getElementById('addBtn').onclick = () => {
-  editId = null;
-  document.getElementById('fName').value = '';
-  document.getElementById('mTitle').textContent = 'Ajouter';
-  document.getElementById('modal').classList.add('open');
-};
-
-document.getElementById('cancel').onclick = () => document.getElementById('modal').classList.remove('open');
-
-document.getElementById('save').onclick = async () => {
-  const payload = {
-    name: document.getElementById('fName').value.trim(),
-    year: +document.getElementById('fYear').value,
-    seats: +document.getElementById('fSeats').value,
-    fuel: document.getElementById('fFuel').value,
-    price: +document.getElementById('fPrice').value,
-    status: document.getElementById('fStatus').value,
-  };
-  if (!payload.name) return;
-  if (editId) {
-    await supabase.from('cars').update(payload).eq('id', editId);
-  } else {
-    await supabase.from('cars').insert(payload);
+rowsEl.addEventListener('click', async e => {
+  const d = e.target.closest('[data-del]'), ed = e.target.closest('[data-edit]');
+  if (d){
+    const c = cars.find(x => x.id === d.dataset.del);
+    if (c && confirm(t('confirmDel').replace('{name}', c.name))){
+      const { data: gone, error } = await sb.from('cars').delete().eq('id', c.id).select('id');
+      if (error || !gone || !gone.length){ toast(t('errDelete')); return; }
+      if (!cars.some(x => x.id !== c.id && x.image_url === c.image_url)) removeImage(c.image_url);
+      cars = cars.filter(x => x.id !== c.id); render();
+    }
   }
-  document.getElementById('modal').classList.remove('open');
+  if (ed) openModal(ed.dataset.edit, ed);
+});
+
+/* ---------- Sidebar: drawer on tablet/phone, collapse on desktop ---------- */
+const sidebar = $('#sidebar'), scrim = $('#scrim'), burger = $('#burger');
+const isDrawer = () => window.matchMedia('(max-width:1024px)').matches;
+
+function setDrawer(open){
+  sidebar.classList.toggle('open', open);
+  scrim.classList.toggle('show', open);
+  document.body.classList.toggle('lock', open);
+  burger.setAttribute('aria-expanded', open);
+}
+burger.addEventListener('click', () => {
+  if (isDrawer()) setDrawer(!sidebar.classList.contains('open'));
+  else {
+    const c = document.body.classList.toggle('collapsed');
+    burger.setAttribute('aria-expanded', !c);
+  }
+});
+scrim.addEventListener('click', () => setDrawer(false));
+sidebar.addEventListener('click', e => { if (e.target.closest('a') && isDrawer()) setDrawer(false); });
+window.addEventListener('resize', () => { if (!isDrawer()) setDrawer(false); });
+
+/* ---------- Modal ---------- */
+const modal = $('#modal');
+let lastFocus = null;
+function openModal(id, trigger){
+  lastFocus = trigger || document.activeElement;
+  editId = id || null;
+  const c = id ? cars.find(x => x.id === id) : {name:'',year:2025,seats:5,fuel:'Essence',price:300,status:'Available'};
+  pendingImage = c.image_url || null; pendingBlob = null; showPrev(); setModalTitle();
+  $('#fName').value = c.name; $('#fYear').value = c.year; $('#fSeats').value = c.seats;
+  $('#fFuel').value = c.fuel; $('#fPrice').value = c.price; $('#fStatus').value = c.status;
+  modal.classList.add('open'); document.body.classList.add('lock');
+  $('#fName').focus();
+}
+function closeModal(){
+  modal.classList.remove('open');
+  if (!sidebar.classList.contains('open')) document.body.classList.remove('lock');
+  if (lastFocus && lastFocus.focus) lastFocus.focus();
+}
+$('#addBtn').onclick = e => openModal(null, e.currentTarget);
+$('#cancel').onclick = closeModal;
+modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape'){ if (modal.classList.contains('open')) closeModal(); else { toggleLang(false); setDrawer(false); } }
+  /* keep Tab focus inside the modal */
+  if (e.key === 'Tab' && modal.classList.contains('open')){
+    const f = [...modal.querySelectorAll('input,select,button')].filter(x => !x.disabled);
+    const first = f[0], last = f[f.length-1];
+    if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  }
+});
+
+/* ---------- Car photo (gallery or camera) ---------- */
+const camIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="#0d1b3d" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a2 2 0 0 1 2-2h2l1.500-2h7L17 6h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.800"/></svg>';
+function showPrev(){
+  $('#prev').innerHTML = pendingImage ? `<img src="${pendingImage}" alt="">` : camIcon;
+  $('#rmPhoto').hidden = !pendingImage;
+}
+function readImage(file){
+  if (!file || !file.type.startsWith('image/')) return;
+  const fr = new FileReader();
+  fr.onload = () => {
+    const img = new Image();
+    img.onload = () => {
+      const max = 800, r = Math.min(1, max / Math.max(img.width, img.height));
+      const cv = document.createElement('canvas');
+      cv.width = Math.round(img.width * r); cv.height = Math.round(img.height * r);
+      const ctx = cv.getContext('2d'); ctx.fillStyle = '#fff'; ctx.fillRect(0,0,cv.width,cv.height);
+      ctx.drawImage(img, 0, 0, cv.width, cv.height);
+      cv.toBlob(b => { if (!b){ alert(t('imgErr')); return; } pendingBlob = b; pendingImage = URL.createObjectURL(b); showPrev(); }, 'image/jpeg', .82);
+    };
+    img.onerror = () => alert(t('imgErr'));
+    img.src = fr.result;
+  };
+  fr.readAsDataURL(file);
+}
+$('#pick').onclick = () => $('#fFile').click();
+$('#snap').onclick = () => $('#fCam').click();
+[$('#fFile'), $('#fCam')].forEach(inp => inp.addEventListener('change', () => { readImage(inp.files[0]); inp.value = ''; }));
+$('#rmPhoto').onclick = () => { pendingImage = null; pendingBlob = null; showPrev(); };
+/* ---------- Language dropdown ---------- */
+const langBtn = $('#langBtn'), langMenu = $('#langMenu');
+function toggleLang(open){ langMenu.hidden = !open; langBtn.setAttribute('aria-expanded', open); }
+langBtn.onclick = e => { e.stopPropagation(); toggleLang(langMenu.hidden); };
+langMenu.querySelectorAll('[data-lang]').forEach(b => b.onclick = () => { setLang(b.dataset.lang); toggleLang(false); langBtn.focus(); });
+document.addEventListener('click', e => { if (!e.target.closest('#lang')) toggleLang(false); });
+
+$('#save').onclick = async () => {
+  if (busy) return;
+  const name = $('#fName').value.trim();
+  if (!name){ $('#fName').focus(); return; }
+  busy = true;
+  const btn = $('#save'); btn.disabled = true; btn.textContent = t('saving');
+  try {
+    const old = editId ? cars.find(x => x.id === editId) : null;
+    const oldUrl = old ? old.image_url : null;
+    let image_url = (pendingImage && !pendingBlob) ? pendingImage : null;
+    if (pendingBlob){
+      const uid = crypto.randomUUID ? crypto.randomUUID() : Date.now() + '-' + Math.random().toString(36).slice(2);
+      const path = `${uid}.jpg`;
+      const up = await sb.storage.from(BUCKET).upload(path, pendingBlob, { contentType:'image/jpeg', cacheControl:'31536000' });
+      if (up.error) throw new Error('upload');
+      image_url = sb.storage.from(BUCKET).getPublicUrl(path).data.publicUrl;
+    }
+    const num = (sel, def, min) => { const v = Math.round(+$(sel).value); return Number.isFinite(v) ? Math.max(min, v) : def; };
+    const payload = { name, year:num('#fYear',2025,2000), seats:num('#fSeats',5,1), fuel:$('#fFuel').value,
+                      price:num('#fPrice',0,0), status:$('#fStatus').value, image_url };
+    const res = editId ? await sb.from('cars').update(payload).eq('id', editId).select('id') : await sb.from('cars').insert(payload).select('id');
+    if (res.error || !res.data || !res.data.length) throw new Error('save');
+    if (oldUrl && oldUrl !== image_url && !cars.some(x => x.id !== editId && x.image_url === oldUrl)) removeImage(oldUrl);
+    closeModal(); await load();
+  } catch (err){
+    toast(t(err.message === 'upload' ? 'errUpload' : 'errSave'));
+  } finally {
+    busy = false; btn.disabled = false; btn.textContent = t('save');
+  }
+};
+
+/* ---------- Logout confirmation ---------- */
+const confirmEl = $('#confirm'); let confirmFocus = null, toastTimer;
+function openConfirm(){ confirmFocus = document.activeElement; confirmEl.classList.add('open'); document.body.classList.add('lock'); $('#cNo').focus(); }
+function closeConfirm(){
+  confirmEl.classList.remove('open');
+  if (!sidebar.classList.contains('open')) document.body.classList.remove('lock');
+  if (confirmFocus && confirmFocus.focus) confirmFocus.focus();
+}
+function toast(msg){
+  const el = $('#toast'); el.textContent = msg; el.classList.add('show');
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), 2500);
+}
+$('#logout').onclick = e => { e.preventDefault(); openConfirm(); };
+$('#cNo').onclick = closeConfirm;
+$('#cYes').onclick = async () => {
+  closeConfirm();
+  await sb.auth.signOut();
+  location.replace('/admin/login');
+};
+confirmEl.addEventListener('click', e => { if (e.target === confirmEl) closeConfirm(); });
+document.addEventListener('keydown', e => {
+  if (!confirmEl.classList.contains('open')) return;
+  if (e.key === 'Escape') closeConfirm();
+  if (e.key === 'Tab'){
+    const f = [$('#cNo'), $('#cYes')];
+    if (e.shiftKey && document.activeElement === f[0]){ e.preventDefault(); f[1].focus(); }
+    else if (!e.shiftKey && document.activeElement === f[1]){ e.preventDefault(); f[0].focus(); }
+  }
+});
+
+/* ---------- Auth guard: only a logged-in admin can see this page ---------- */
+(async () => {
+  let session = null;
+  try { session = (await sb.auth.getSession()).data.session; } catch(e){}
+  if (!session){ location.replace('/admin/login'); return; }
+  document.body.classList.add('ready');
+  sb.auth.onAuthStateChange(ev => { if (ev === 'SIGNED_OUT') location.replace('/admin/login'); });
   load();
-};
-
-document.getElementById('q').oninput = render;
-document.getElementById('logout').onclick = async (e) => {
-  e.preventDefault();
-  await supabase.auth.signOut();
-  location.href = '/admin/login';
-};
-
-document.getElementById('langBtn').onclick = () => {
-  lang = lang === 'fr' ? 'ar' : 'fr';
-  document.documentElement.lang = lang;
-  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-  document.getElementById('title').textContent = I18N[lang].title;
-  document.getElementById('subtitle').textContent = I18N[lang].subtitle;
-  document.getElementById('addBtn').textContent = '+ ' + I18N[lang].add;
-  document.getElementById('langBtn').textContent = lang === 'fr' ? 'Français' : 'العربية';
-  render();
-};
-
-load();
+})();
+applyLang();
 </script>
 </body>
 </html>

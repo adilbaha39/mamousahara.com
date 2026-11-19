@@ -34,42 +34,33 @@ Ouvrir http://localhost:3000 (redirige vers `/fr`)
 
 ## Admin dashboard (Supabase)
 
-### 1. Create a Supabase project
-https://supabase.com → New project
+Dashboard statique : `public/dashboard.html` (FR / AR, photos depuis la galerie ou la caméra).
 
-### 2. Run SQL schema
-SQL Editor → paste and run `supabase/schema.sql`
+### 1. Projet Supabase
+https://supabase.com -> New project
 
-### 3. Create admin user
-Authentication → Users → Add user  
-- Email: `mamousahara.com@gmail.com`  
-- Password: set in the Supabase dashboard (do **not** put it in the code)
+### 2. Schéma SQL
+SQL Editor -> coller et exécuter `supabase/schema.sql`
 
-### 4. Env vars
-Copy `.env.example` to `.env.local`:
+### 3. Utilisateur admin
+Authentication -> Users -> Add user (email + mot de passe définis dans Supabase, jamais dans le code)
 
-```bash
-cp .env.example .env.local
-```
+### 4. Variables d'environnement
+Local : `.env.local` (déjà créé). Sur Vercel : Settings -> Environment Variables, ajouter
+`NEXT_PUBLIC_SUPABASE_URL` et `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
 
-Fill:
+Le dashboard contient aussi l'URL et la clé publique (`sb_publishable_...`) en haut du script
+(`SUPABASE_URL`, `SUPABASE_KEY`) : à modifier si vous changez de projet Supabase.
 
-```
-NEXT_PUBLIC_SUPABASE_URL=https://xxxx.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...
-```
-
-### 5. Run
-
+### 5. Lancer
 ```bash
 npm install
 npm run dev
 ```
 
-Open: http://localhost:3000/admin/login
-
 ### Routes
-- `/admin/login` – email login
-- `/admin` – manage cars (CRUD + photos)
+- `/admin/login` – connexion
+- `/admin` – redirige vers `/dashboard.html`
+- `/dashboard.html` – gestion des voitures (protégé : redirige vers le login sans session)
 
-Cars are stored in the `cars` table and photos in the `cars` storage bucket.
+Les voitures sont dans la table `cars`, les photos dans le bucket `cars`.
