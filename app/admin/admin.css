@@ -85,3 +85,47 @@ html[lang=ar] body{font-family:"Noto Sans Arabic",Inter,sans-serif}
   .btn-add{width:100%}
   table{min-width:0}
 }
+
+/* ===== Login page ===== */
+.loading-screen{flex:1;min-height:100vh;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:16px;background:var(--bg)}
+
+.login-page{
+  flex:1;width:100%;min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:24px 16px;
+  background:
+    radial-gradient(900px 500px at 15% 10%,rgba(29,95,214,.35),transparent 60%),
+    linear-gradient(160deg,#0b1f4f 0%,#0a2a6b 55%,#0b1f4f 100%);
+}
+.login-box{
+  width:100%;max-width:420px;
+  background:#fff;border-radius:18px;
+  padding:36px 32px 32px;
+  box-shadow:0 24px 60px rgba(4,12,35,.45);
+  display:flex;flex-direction:column;
+}
+.login-box h1{font-size:28px;font-weight:700;color:var(--navy);text-align:center;line-height:1.15}
+.login-box > p{font-size:14px;color:var(--muted);text-align:center;margin:8px 0 24px}
+.login-box label{font-size:13px;font-weight:600;color:var(--muted);margin:14px 0 6px}
+.login-box input{
+  width:100%;height:48px;padding:0 14px;
+  border:1.5px solid #dfe5f1;border-radius:10px;
+  font:inherit;font-size:15px;color:var(--ink);background:#fff;outline:0;
+  transition:border-color .15s,box-shadow .15s;
+}
+.login-box input::placeholder{color:#9aa5c0}
+.login-box input:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(29,95,214,.15)}
+.login-box .err{font-size:14px;line-height:1.45;margin:0 0 6px}
+.btn-login{
+  margin-top:24px;width:100%;min-height:50px;
+  background:var(--navy);color:#fff;font-size:16px;font-weight:600;
+  border-radius:10px;box-shadow:0 8px 18px rgba(11,31,79,.28);
+  transition:background .15s,transform .1s;
+}
+.btn-login:hover:not(:disabled){background:var(--blue)}
+.btn-login:active:not(:disabled){transform:translateY(1px)}
+.btn-login:disabled{opacity:.65;cursor:not-allowed}
+@media (max-width:480px){
+  .login-box{padding:28px 20px 24px;border-radius:14px}
+  .login-box h1{font-size:24px}
+}
